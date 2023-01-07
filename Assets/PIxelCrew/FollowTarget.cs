@@ -2,8 +2,6 @@ using UnityEngine;
 
 namespace PixelCrew
 {
-
-
     public class FollowTarget : MonoBehaviour
     {
         [SerializeField] private Transform _target;
