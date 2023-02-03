@@ -11,8 +11,8 @@ namespace PixelCrew.Components
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if(other.gameObject.CompareTag(_tag))
+            if (other.gameObject.CompareTag(_tag))
                 _action?.Invoke();
         }
     }
-} 
+}

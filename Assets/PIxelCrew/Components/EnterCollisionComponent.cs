@@ -12,6 +12,7 @@ namespace PixelCrew.Components
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            Debug.Log("Collision");
             if (other.gameObject.CompareTag(_tag))
                 _action?.Invoke(other.gameObject);
         }

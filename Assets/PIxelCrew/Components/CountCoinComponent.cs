@@ -8,15 +8,17 @@ namespace PixelCrew.Components
     public class CountCoinComponent : MonoBehaviour
     {
         [SerializeField] private Hero _hero;
+        private Collider2D _collider;
 
-        public void AddSilverCoin(int count)
+        private void Awake()
         {
-            _hero.AddCoins(1);
+            _collider = GetComponent<Collider2D>();
         }
 
-        public void AddGoldCoin()
+        public void AddCoin(int count)
         {
-            _hero.AddCoins(10);
+            _hero.AddCoins(count);
+            _collider.enabled = false;
         }
     }
 }

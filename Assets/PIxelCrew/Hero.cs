@@ -1,3 +1,4 @@
+using PixelCrew.Components;
 using UnityEngine;
 
 namespace PixelCrew
@@ -7,8 +8,14 @@ namespace PixelCrew
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpd;
-        [SerializeField] private LayerCheck _groundCheck;
+        [SerializeField] private LayerMask _groundLayer;
+        [SerializeField] private float _interactionRadius;
+        [SerializeField] private LayerMask _interactionLayer;
 
+        [SerializeField] private float _groundCheckRadius;
+        [SerializeField] private Vector3 _groundCheckPositionDelta;
+
+        private Collider2D[] _interactionResult = new Collider2D[1];
         private Vector2 _direction;
         private Rigidbody2D _rigitbody;
         private Animator _animator;
@@ -28,6 +35,11 @@ namespace PixelCrew
             _rigitbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _sprite = GetComponent<SpriteRenderer>();
+        }
+
+        private void Start()
+        {
+            _coins = 0;
         }
 
         public void SetDirection(Vector2 direction)
@@ -64,7 +76,7 @@ namespace PixelCrew
             }
             else if (_rigitbody.velocity.y > 0)
             {
-                yVelocity *= 0.5f;               
+                yVelocity *= 0.5f;
             }
             return yVelocity;
         }
@@ -76,7 +88,7 @@ namespace PixelCrew
 
             if (_isGrounded)
             {
-                yVelocity = _jumpSpeed;
+                yVelocity += _jumpSpeed;
             }
             else if (_allowDoubleJump)
             {
@@ -100,13 +112,22 @@ namespace PixelCrew
 
         private bool IsGrounded()
         {
-            return _groundCheck.IsTouchingLayer;
+            var hit = Physics2D.CircleCast(transform.position + _groundCheckPositionDelta, _groundCheckRadius,
+                Vector2.down, 0, _groundLayer);
+            return hit.collider != null;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = IsGrounded() ? Color.green : Color.red;
+            Gizmos.DrawSphere(transform.position + _groundCheckPositionDelta, _groundCheckRadius);
         }
 
         public void SaySomething()
         {
             Debug.Log("Something");
         }
+
         public void AddCoins(int coins)
         {
             _coins += coins;
@@ -117,6 +138,25 @@ namespace PixelCrew
         {
             _animator.SetTrigger(Hit);
             _rigitbody.velocity = new Vector2(_rigitbody.velocity.x, _damageJumpSpd);
+        }
+
+        public void Interact()
+        {
+            var size = Physics2D.OverlapCircleNonAlloc(
+                transform.position,
+                _interactionRadius,
+                _interactionResult,
+                _interactionLayer);
+            Debug.Log($"Interact, size: {size}");
+
+            for (int i = 0; i < size; i++)
+            {
+                var interactble = _interactionResult[i].GetComponent<InteractableComponent>();
+                if (interactble != null)
+                {
+                    interactble.Interact();
+                }
+            }
         }
     }
 }
