@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5968505667011414892}
   - component: {fileID: 5968505667011414895}
   m_Layer: 0
-  m_Name: Destroy
+  m_Name: DestroyCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
