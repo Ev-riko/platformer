@@ -104,6 +104,7 @@ MonoBehaviour:
   - {fileID: 1471866225, guid: 4b0ce02742649fa4c898e53194a05846, type: 3}
   - {fileID: -673076029, guid: 4b0ce02742649fa4c898e53194a05846, type: 3}
   - {fileID: 592729340, guid: 4b0ce02742649fa4c898e53194a05846, type: 3}
+  _desableOnComplete: 0
   _onComplete:
     m_PersistentCalls:
       m_Calls:
@@ -343,6 +344,7 @@ MonoBehaviour:
   - {fileID: 1634805390, guid: 4b0ce02742649fa4c898e53194a05846, type: 3}
   - {fileID: -1542175296, guid: 4b0ce02742649fa4c898e53194a05846, type: 3}
   - {fileID: 1557346157, guid: 4b0ce02742649fa4c898e53194a05846, type: 3}
+  _desableOnComplete: 1
   _onComplete:
     m_PersistentCalls:
       m_Calls: []

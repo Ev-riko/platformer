@@ -18,9 +18,10 @@ namespace PixelCrew.Components
         }
 
         public void ApllyDamage(int DamageValue)
-        {
+        {            
             _currentHealth -= DamageValue;
             _onDamage?.Invoke();
+            Debug.Log($"DamageValue: {DamageValue}, _currentHealth: {_currentHealth}");
             if (_currentHealth <= 0)
             {
                 _onDie?.Invoke();
@@ -28,8 +29,9 @@ namespace PixelCrew.Components
         }
 
         public void ApllyHeal(int HealValue)
-        {
-            _currentHealth = System.Math.Max(_maxHealth, _currentHealth + HealValue);
+        {           
+            _currentHealth = System.Math.Min(_maxHealth, _currentHealth + HealValue);
+            Debug.Log($"HealValue: {HealValue}, _currentHealth: {_currentHealth}");
             _onHeal?.Invoke();
         }
     }

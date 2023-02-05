@@ -15,6 +15,8 @@ namespace PixelCrew
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
 
+        [SerializeField] private GameObject _gameObjectPotinEffect;
+
         private Collider2D[] _interactionResult = new Collider2D[1];
         private Vector2 _direction;
         private Rigidbody2D _rigitbody;
@@ -34,11 +36,12 @@ namespace PixelCrew
         {
             _rigitbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
-            _sprite = GetComponent<SpriteRenderer>();
+            _sprite = GetComponent<SpriteRenderer>();       
         }
 
         private void Start()
         {
+            _gameObjectPotinEffect.SetActive(false);
             _coins = 0;
         }
 
@@ -132,6 +135,11 @@ namespace PixelCrew
         {
             _coins += coins;
             Debug.Log($"Added: {coins} Total: {_coins}");
+        }
+
+        public void PlayPotionEffectAnimation()
+        {
+            _gameObjectPotinEffect.SetActive(true);
         }
 
         public void TakeDamage()

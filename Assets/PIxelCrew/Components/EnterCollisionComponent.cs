@@ -15,6 +15,7 @@ namespace PixelCrew.Components
             Debug.Log("Collision");
             if (other.gameObject.CompareTag(_tag))
                 _action?.Invoke(other.gameObject);
+            
         }
 
         [Serializable]

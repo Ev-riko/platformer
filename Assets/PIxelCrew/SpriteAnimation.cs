@@ -10,6 +10,7 @@ namespace PixelCrew
         [SerializeField] private int _frameRate;
         [SerializeField] private bool _loop;
         [SerializeField] private Sprite[] _sprites;
+        [SerializeField] private bool _desableOnComplete;
         [SerializeField] private UnityEvent _onComplete;
 
         private SpriteRenderer _renderer;
@@ -41,7 +42,7 @@ namespace PixelCrew
                 }
                 else
                 {
-                    enabled = false;
+                    enabled = !_desableOnComplete;
                     _onComplete?.Invoke();
                     return;
                 }
