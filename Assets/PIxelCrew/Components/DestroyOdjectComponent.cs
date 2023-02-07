@@ -8,7 +8,7 @@ namespace PixelCrew.Components
 
         public void DestroyOdject()
         {
-            Debug.Log("DestroyOdject");
+            //Debug.Log("DestroyOdject");
             Destroy(_objectToDestroy);
         }
     }

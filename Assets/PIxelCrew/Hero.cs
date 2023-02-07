@@ -17,6 +17,10 @@ namespace PixelCrew
 
         [SerializeField] private GameObject _gameObjectPotinEffect;
 
+        [SerializeField] private SpawnComponent _footStepParticles;
+        [SerializeField] private SpawnComponent _jumpParticles;
+        [SerializeField] private ParticleSystem _hitParticles;
+
         private Collider2D[] _interactionResult = new Collider2D[1];
         private Vector2 _direction;
         private Rigidbody2D _rigitbody;
@@ -92,11 +96,15 @@ namespace PixelCrew
             if (_isGrounded)
             {
                 yVelocity += _jumpSpeed;
+                Debug.Log("Jump");
+                SpawnJumpDust();
             }
             else if (_allowDoubleJump)
             {
                 yVelocity = _jumpSpeed;
                 _allowDoubleJump = false;
+                Debug.Log("DoubleJump");
+                SpawnJumpDust();
             }
             return yVelocity;
         }
@@ -105,11 +113,11 @@ namespace PixelCrew
         {
             if (_direction.x > 0)
             {
-                _sprite.flipX = false;
+                transform.localScale = Vector3.one;
             }
             else if (_direction.x < 0)
             {
-                _sprite.flipX = true;
+                transform.localScale = new Vector3(-1, 1, 1);
             }
         }
 
@@ -146,6 +154,22 @@ namespace PixelCrew
         {
             _animator.SetTrigger(Hit);
             _rigitbody.velocity = new Vector2(_rigitbody.velocity.x, _damageJumpSpd);
+
+            if (_coins > 0)
+                SpawnCoinsParticles();
+        }
+
+        private void SpawnCoinsParticles()
+        {
+            var numCoinsDispose = Mathf.Min(_coins, 5);
+            _coins -= numCoinsDispose;
+
+            var burst = _hitParticles.emission.GetBurst(0);
+            burst.count = numCoinsDispose;
+            _hitParticles.emission.SetBurst(0, burst);
+
+            _hitParticles.gameObject.SetActive(true);
+            _hitParticles.Play();
         }
 
         public void Interact()
@@ -166,5 +190,16 @@ namespace PixelCrew
                 }
             }
         }
+
+        public void SpawnFootStepDust()
+        {
+            _footStepParticles.Spawn();
+        }
+
+        public void SpawnJumpDust()
+        {
+            _jumpParticles.Spawn();
+        }
+
     }
 }
