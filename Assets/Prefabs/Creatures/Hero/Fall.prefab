@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4393407034573295723}
   - component: {fileID: 2015681539715400740}
   m_Layer: 0
-  m_Name: Jump
+  m_Name: Fall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,12 +101,11 @@ MonoBehaviour:
   _frameRate: 10
   _loop: 0
   _sprites:
-  - {fileID: 21300000, guid: 2e44a453867520c4dbedc050571e3d07, type: 3}
-  - {fileID: 21300000, guid: e88f24ec85d69194185cfabf5df6df8c, type: 3}
-  - {fileID: 21300000, guid: 07eb0654652b19d41a0c871749278a79, type: 3}
-  - {fileID: 21300000, guid: 44285057311e73d498ba8de9d18f423a, type: 3}
-  - {fileID: 21300000, guid: 4d84db97611dd344ba8d1e7682d463f9, type: 3}
-  - {fileID: 21300000, guid: 50c571e9d6dede944960f6db0ba0320b, type: 3}
+  - {fileID: 21300000, guid: 64144be6dc94e124097afcee8b59ca99, type: 3}
+  - {fileID: 21300000, guid: f54b9208eb2262440afb953e4943fda2, type: 3}
+  - {fileID: 21300000, guid: 73f97e8acbcf45141b6f0905df9779a2, type: 3}
+  - {fileID: 21300000, guid: dd257212363023f41a5517d493727021, type: 3}
+  - {fileID: 21300000, guid: 5087ceb0f8d637a4abd9dec0a30cdf5d, type: 3}
   _desableOnComplete: 0
   _onComplete:
     m_PersistentCalls:

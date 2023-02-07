@@ -5038,6 +5038,7 @@ MonoBehaviour:
   _speed: 3
   _jumpSpeed: 12
   _damageJumpSpd: 80
+  _highBorderFallSpd: 15
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -5048,7 +5049,8 @@ MonoBehaviour:
   _groundCheckRadius: 0.3
   _groundCheckPositionDelta: {x: 0, y: -0.12, z: 0}
   _gameObjectPotinEffect: {fileID: 6057377996897685737}
-  _footStopParticles: {fileID: 610887924}
+  _footStepParticles: {fileID: 0}
+  _jumpParticles: {fileID: 0}
   _hitParticles: {fileID: 2015572252}
 --- !u!114 &6057377996538258839
 MonoBehaviour:

@@ -8,6 +8,7 @@ namespace PixelCrew
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpd;
+        [SerializeField] private float _highBorderFallSpd;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
@@ -19,6 +20,7 @@ namespace PixelCrew
 
         [SerializeField] private SpawnComponent _footStepParticles;
         [SerializeField] private SpawnComponent _jumpParticles;
+        [SerializeField] private SpawnComponent _FallParticles;
         [SerializeField] private ParticleSystem _hitParticles;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
@@ -28,6 +30,8 @@ namespace PixelCrew
         private SpriteRenderer _sprite;
         private bool _isGrounded;
         private bool _allowDoubleJump;
+        private bool _isHigtFallSpeed;
+
 
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
         private static readonly int IsRunningKey = Animator.StringToHash("is-running");
@@ -76,7 +80,22 @@ namespace PixelCrew
         {
             var yVelocity = _rigitbody.velocity.y;
             var isLumpPressing = _direction.y > 0;
-            if (_isGrounded) _allowDoubleJump = true;
+            
+            if (_isGrounded)
+            {
+                if(_isHigtFallSpeed && Mathf.Abs(yVelocity) < 0.001f)
+                { 
+                    SpawnFallDust();
+                    _isHigtFallSpeed = false;
+                }
+                    
+                _allowDoubleJump = true;
+            }
+            else
+            {
+                _isHigtFallSpeed = -yVelocity > _highBorderFallSpd;
+            }
+
             if (isLumpPressing)
             {
                 yVelocity = CalculateJumpVelosity(yVelocity);
@@ -92,7 +111,6 @@ namespace PixelCrew
         {
             var isFalling = _rigitbody.velocity.y <= 0.001f;
             if (!isFalling) return yVelocity;
-
             if (_isGrounded)
             {
                 yVelocity += _jumpSpeed;
@@ -201,5 +219,9 @@ namespace PixelCrew
             _jumpParticles.Spawn();
         }
 
+        public void SpawnFallDust()
+        {
+            _FallParticles.Spawn();
+        }
     }
 }
