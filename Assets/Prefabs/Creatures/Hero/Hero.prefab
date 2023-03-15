@@ -5037,7 +5037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   _jumpSpeed: 12
-  _damageJumpSpd: 80
+  _damageJumpSpd: 15
   _highBorderFallSpd: 15
   _groundLayer:
     serializedVersion: 2
@@ -5051,6 +5051,7 @@ MonoBehaviour:
   _gameObjectPotinEffect: {fileID: 6057377996897685737}
   _footStepParticles: {fileID: 0}
   _jumpParticles: {fileID: 0}
+  _FallParticles: {fileID: 0}
   _hitParticles: {fileID: 2015572252}
 --- !u!114 &6057377996538258839
 MonoBehaviour:

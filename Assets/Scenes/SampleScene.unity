@@ -2537,6 +2537,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aa3b8982a0b01741bc5a71e1ca09a88, type: 3}
+--- !u!1 &934978759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8394550344474381928, guid: f3498b6a871bfc3479beb3d825d3bc61, type: 3}
+  m_PrefabInstance: {fileID: 8394550342911819601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &934978760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934978759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7506044e7ccc8c047aab72f9b025bed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frameRate: 0
+  _loop: 0
+  _sprites: []
+  _desableOnComplete: 0
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1000366504
 GameObject:
   m_ObjectHideFlags: 0
@@ -12900,6 +12924,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6057377996538258832, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
+      propertyPath: _jumpSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6057377996538258832, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
       propertyPath: _FallParticles
       value: 
       objectReference: {fileID: 501510739}
@@ -13037,6 +13065,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1436604012919236877, guid: f3498b6a871bfc3479beb3d825d3bc61, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7248895920364690491, guid: f3498b6a871bfc3479beb3d825d3bc61, type: 3}
       propertyPath: _destTransform
       value: 
@@ -13088,6 +13120,30 @@ PrefabInstance:
     - target: {fileID: 8394550344474381930, guid: f3498b6a871bfc3479beb3d825d3bc61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8394550344474381931, guid: f3498b6a871bfc3479beb3d825d3bc61, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8394550344474381931, guid: f3498b6a871bfc3479beb3d825d3bc61, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2041985974, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - target: {fileID: 8394550344474381931, guid: f3498b6a871bfc3479beb3d825d3bc61, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8394550344474381931, guid: f3498b6a871bfc3479beb3d825d3bc61, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8394550344474381931, guid: f3498b6a871bfc3479beb3d825d3bc61, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8394550344474381931, guid: f3498b6a871bfc3479beb3d825d3bc61, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3498b6a871bfc3479beb3d825d3bc61, type: 3}

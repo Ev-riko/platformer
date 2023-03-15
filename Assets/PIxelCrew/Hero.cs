@@ -31,6 +31,7 @@ namespace PixelCrew
         private bool _isGrounded;
         private bool _allowDoubleJump;
         private bool _isHigtFallSpeed;
+        private bool _isJumping;
 
 
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
@@ -90,6 +91,8 @@ namespace PixelCrew
                 }
                     
                 _allowDoubleJump = true;
+
+                _isJumping = false;
             }
             else
             {
@@ -98,9 +101,10 @@ namespace PixelCrew
 
             if (isLumpPressing)
             {
+                _isJumping = true;
                 yVelocity = CalculateJumpVelosity(yVelocity);
             }
-            else if (_rigitbody.velocity.y > 0)
+            else if (_rigitbody.velocity.y > 0 && _isJumping)
             {
                 yVelocity *= 0.5f;
             }
@@ -170,6 +174,7 @@ namespace PixelCrew
 
         public void TakeDamage()
         {
+            _isJumping = false;
             _animator.SetTrigger(Hit);
             _rigitbody.velocity = new Vector2(_rigitbody.velocity.x, _damageJumpSpd);
 
