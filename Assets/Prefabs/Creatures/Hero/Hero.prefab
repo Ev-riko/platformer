@@ -150,12 +150,12 @@ GameObject:
   - component: {fileID: 2015572252}
   - component: {fileID: 2015572253}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: CoinsParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2015572254
 Transform:
   m_ObjectHideFlags: 0
@@ -5142,7 +5142,7 @@ MonoBehaviour:
     m_Bits: 128
   _groundCheckRadius: 0.3
   _groundCheckPositionDelta: {x: 0, y: -0.13, z: 0}
-  _gameObjectPotinEffect: {fileID: 6057377996897685737}
+  _gameObjectPotionEffect: {fileID: 6057377996897685737}
   _footStepParticles: {fileID: 610887924}
   _jumpParticles: {fileID: 908009148}
   _FallParticles: {fileID: 501510739}
