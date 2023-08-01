@@ -1,4 +1,5 @@
 using PixelCrew.Components;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace PixelCrew
@@ -16,7 +17,7 @@ namespace PixelCrew
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
 
-        [SerializeField] private GameObject _gameObjectPotinEffect;
+        [SerializeField] private GameObject _gameObjectPotionEffect;
 
         [SerializeField] private SpawnComponent _footStepParticles;
         [SerializeField] private SpawnComponent _jumpParticles;
@@ -48,9 +49,15 @@ namespace PixelCrew
             _sprite = GetComponent<SpriteRenderer>();       
         }
 
+        private void OnEnable()
+        {
+            _hitParticles.GameObject().SetActive(false);
+        }
+
         private void Start()
         {
-            _gameObjectPotinEffect.SetActive(false);
+            _gameObjectPotionEffect.SetActive(false);
+            
             _coins = 0;
         }
 
@@ -58,6 +65,8 @@ namespace PixelCrew
         {
             _direction = direction;
         }
+
+        
 
         private void Update()
         {
@@ -169,7 +178,7 @@ namespace PixelCrew
 
         public void PlayPotionEffectAnimation()
         {
-            _gameObjectPotinEffect.SetActive(true);
+            _gameObjectPotionEffect.SetActive(true);
         }
 
         public void TakeDamage()
