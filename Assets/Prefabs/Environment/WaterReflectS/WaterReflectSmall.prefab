@@ -71,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1486444423
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1320870233, guid: 92a622babc34ce5458db1d419ba9301a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,12 +98,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 6
-  _loop: 1
-  _sprites:
-  - {fileID: -1320870233, guid: 92a622babc34ce5458db1d419ba9301a, type: 3}
-  - {fileID: 1667300806, guid: 92a622babc34ce5458db1d419ba9301a, type: 3}
-  - {fileID: -542960878, guid: 92a622babc34ce5458db1d419ba9301a, type: 3}
-  - {fileID: 1013110309, guid: 92a622babc34ce5458db1d419ba9301a, type: 3}
+  _clips:
+  - _name: Idle
+    _sprites:
+    - {fileID: -1320870233, guid: 92a622babc34ce5458db1d419ba9301a, type: 3}
+    - {fileID: 1667300806, guid: 92a622babc34ce5458db1d419ba9301a, type: 3}
+    - {fileID: -542960878, guid: 92a622babc34ce5458db1d419ba9301a, type: 3}
+    - {fileID: 1013110309, guid: 92a622babc34ce5458db1d419ba9301a, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
   _onComplete:
     m_PersistentCalls:
       m_Calls: []

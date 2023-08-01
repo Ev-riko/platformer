@@ -102,16 +102,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _loop: 1
-  _sprites:
-  - {fileID: -304743613, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
-  - {fileID: -361783823, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
-  - {fileID: 467249639, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
-  - {fileID: -2104977017, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
-  - {fileID: -510530447, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
-  - {fileID: -26937449, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
-  - {fileID: 993743976, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
-  _desableOnComplete: 0
+  _clips:
+  - _name: Idle
+    _sprites:
+    - {fileID: -304743613, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
+    - {fileID: -361783823, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
+    - {fileID: 467249639, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
+    - {fileID: -2104977017, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
+    - {fileID: -510530447, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
+    - {fileID: -26937449, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
+    - {fileID: 993743976, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
   _onComplete:
     m_PersistentCalls:
       m_Calls: []

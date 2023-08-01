@@ -4930,6 +4930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destTransform: {fileID: 0}
+  _alphaTime: 1
+  _moveTime: 1
 --- !u!114 &3830146274430402143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4970,25 +4972,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 6
-  _loop: 1
-  _sprites:
-  - {fileID: 2041985974, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: 1944619435, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: -1791244721, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: -1766423620, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: 1746563152, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: 559281064, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: -893859995, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: -998884972, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: 1054802672, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: 1074906677, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: 850469057, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: -902437577, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: -1569719107, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: -1972329942, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: 1809563764, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  - {fileID: -471666184, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
-  _desableOnComplete: 0
+  _clips:
+  - _name: Idle
+    _sprites:
+    - {fileID: 2041985974, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: 1944619435, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: -1791244721, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: -1766423620, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: 1746563152, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: 559281064, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: -893859995, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: -998884972, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: 1054802672, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: 1074906677, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: 850469057, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: -902437577, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: -1569719107, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: -1972329942, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: 1809563764, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    - {fileID: -471666184, guid: 0809c88fed819db4e804ab0972fec521, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
   _onComplete:
     m_PersistentCalls:
       m_Calls: []

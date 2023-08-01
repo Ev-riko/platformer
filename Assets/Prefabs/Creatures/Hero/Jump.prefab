@@ -99,15 +99,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _loop: 0
-  _sprites:
-  - {fileID: 21300000, guid: 2e44a453867520c4dbedc050571e3d07, type: 3}
-  - {fileID: 21300000, guid: e88f24ec85d69194185cfabf5df6df8c, type: 3}
-  - {fileID: 21300000, guid: 07eb0654652b19d41a0c871749278a79, type: 3}
-  - {fileID: 21300000, guid: 44285057311e73d498ba8de9d18f423a, type: 3}
-  - {fileID: 21300000, guid: 4d84db97611dd344ba8d1e7682d463f9, type: 3}
-  - {fileID: 21300000, guid: 50c571e9d6dede944960f6db0ba0320b, type: 3}
-  _desableOnComplete: 0
+  _clips:
+  - _name: Jump
+    _sprites:
+    - {fileID: 21300000, guid: 2e44a453867520c4dbedc050571e3d07, type: 3}
+    - {fileID: 21300000, guid: e88f24ec85d69194185cfabf5df6df8c, type: 3}
+    - {fileID: 21300000, guid: 07eb0654652b19d41a0c871749278a79, type: 3}
+    - {fileID: 21300000, guid: 44285057311e73d498ba8de9d18f423a, type: 3}
+    - {fileID: 21300000, guid: 4d84db97611dd344ba8d1e7682d463f9, type: 3}
+    - {fileID: 21300000, guid: 50c571e9d6dede944960f6db0ba0320b, type: 3}
+    _loop: 0
+    _allowNextClip: 1
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
   _onComplete:
     m_PersistentCalls:
       m_Calls:

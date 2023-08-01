@@ -99,14 +99,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _loop: 0
-  _sprites:
-  - {fileID: 21300000, guid: 64144be6dc94e124097afcee8b59ca99, type: 3}
-  - {fileID: 21300000, guid: f54b9208eb2262440afb953e4943fda2, type: 3}
-  - {fileID: 21300000, guid: 73f97e8acbcf45141b6f0905df9779a2, type: 3}
-  - {fileID: 21300000, guid: dd257212363023f41a5517d493727021, type: 3}
-  - {fileID: 21300000, guid: 5087ceb0f8d637a4abd9dec0a30cdf5d, type: 3}
-  _desableOnComplete: 0
+  _clips:
+  - _name: Fall
+    _sprites:
+    - {fileID: 21300000, guid: 64144be6dc94e124097afcee8b59ca99, type: 3}
+    - {fileID: 21300000, guid: f54b9208eb2262440afb953e4943fda2, type: 3}
+    - {fileID: 21300000, guid: 73f97e8acbcf45141b6f0905df9779a2, type: 3}
+    - {fileID: 21300000, guid: dd257212363023f41a5517d493727021, type: 3}
+    - {fileID: 21300000, guid: 5087ceb0f8d637a4abd9dec0a30cdf5d, type: 3}
+    _loop: 0
+    _allowNextClip: 1
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
   _onComplete:
     m_PersistentCalls:
       m_Calls:
