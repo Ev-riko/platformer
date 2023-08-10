@@ -7,11 +7,12 @@ namespace PixelCrew.Components
 {
     public class CountCoinComponent : MonoBehaviour
     {
-        [SerializeField] private Hero _hero;
+        private Hero _hero;
         private Collider2D _collider;
 
         private void Awake()
         {
+            _hero = FindObjectOfType<Hero>();
             _collider = GetComponent<Collider2D>();
         }
 

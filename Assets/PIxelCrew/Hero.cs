@@ -46,18 +46,19 @@ namespace PixelCrew
         {
             _rigitbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
-            _sprite = GetComponent<SpriteRenderer>();       
+            _sprite = GetComponent<SpriteRenderer>();
+            
         }
 
         private void OnEnable()
         {
             _hitParticles.GameObject().SetActive(false);
+            
         }
 
         private void Start()
         {
             _gameObjectPotionEffect.SetActive(false);
-            
             _coins = 0;
         }
 
@@ -183,16 +184,18 @@ namespace PixelCrew
 
         public void TakeDamage()
         {
+            Debug.Log("TakeDamage");
             _isJumping = false;
             _animator.SetTrigger(Hit);
             _rigitbody.velocity = new Vector2(_rigitbody.velocity.x, _damageJumpSpd);
-
+            Debug.Log($"_coins: {_coins}");
             if (_coins > 0)
                 SpawnCoinsParticles();
         }
 
         private void SpawnCoinsParticles()
         {
+            Debug.Log("SpawnCoinsParticles");
             var numCoinsDispose = Mathf.Min(_coins, 5);
             _coins -= numCoinsDispose;
 
