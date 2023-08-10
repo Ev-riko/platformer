@@ -189,8 +189,8 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 8314305142224991397}
-        m_TargetAssemblyTypeName: PixelCrew.Components.DamageHealComponent, Assembly-CSharp
-        m_MethodName: ApllyHeal
+        m_TargetAssemblyTypeName: PixelCrew.Components.ModifyHealthComponent, Assembly-CSharp
+        m_MethodName: ModifyHealth
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

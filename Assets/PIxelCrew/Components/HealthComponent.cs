@@ -10,29 +10,33 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEvent _onDie;
         [SerializeField] private UnityEvent _onHeal;
 
-        private int _currentHealth;
+        private int _health;
 
         private void Start()
         {
-            _currentHealth = _maxHealth;
+            _health = _maxHealth;
         }
 
-        public void ApllyDamage(int DamageValue)
-        {            
-            _currentHealth -= DamageValue;
-            _onDamage?.Invoke();
-            Debug.Log($"DamageValue: {DamageValue}, _currentHealth: {_currentHealth}");
-            if (_currentHealth <= 0)
+        public void ModifyHealth(int healthDelta)
+        {
+            if (healthDelta > 0) 
+            {
+                _health = System.Math.Min(_maxHealth, _health + healthDelta);
+                Debug.Log($"HealValue: {healthDelta}, _health: {_health}");
+                _onHeal?.Invoke();
+            }
+            else if (healthDelta < 0)
+            {
+                _health += healthDelta;
+                Debug.Log($"DamageValue: {healthDelta}, _health: {_health}");
+                _onDamage?.Invoke();
+            }
+
+
+            if (_health <= 0)
             {
                 _onDie?.Invoke();
             }
-        }
-
-        public void ApllyHeal(int HealValue)
-        {           
-            _currentHealth = System.Math.Min(_maxHealth, _currentHealth + HealValue);
-            Debug.Log($"HealValue: {HealValue}, _currentHealth: {_currentHealth}");
-            _onHeal?.Invoke();
         }
     }
 }
