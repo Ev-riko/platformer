@@ -18,6 +18,7 @@ namespace PixelCrew
         private float _nextFrameTime;
 
         private int _currentClipIndex;
+        private bool _isPlaing = true;
 
         private void Start()
         {
@@ -30,9 +31,28 @@ namespace PixelCrew
             StartAnimation();
         }
 
+        private void StartAnimation()
+        {
+            _nextFrameTime = Time.time + _secondsPerFrame;
+            enabled = _isPlaing = true;
+            _currentFrame = 0;
+        }
+
         private void OnEnable()
         {
             _nextFrameTime = Time.time + _secondsPerFrame;
+        }
+
+        private void OnBecameVisible()
+        {
+            //Debug.Log("OnBecameVisible");
+            enabled = _isPlaing;
+        }
+
+        private void OnBecameInvisible()
+        {
+            //Debug.Log("OnBecameInvisible");
+            enabled = _isPlaing;
         }
 
         private void Update()
@@ -48,9 +68,10 @@ namespace PixelCrew
                 }
                 else
                 {
+                    enabled = _isPlaing = clip.AllowNextClip;
                     clip.OnComplete?.Invoke();
                     _onComplete?.Invoke(clip.Name);
-                    enabled = clip.AllowNextClip;
+                    
                     if (clip.AllowNextClip)
                     {
                         _currentFrame = 0;
@@ -66,11 +87,7 @@ namespace PixelCrew
             //Debug.Log($"_currentSpriteIndex: {_currentFrame}");
         }
 
-        private void StartAnimation()
-        {
-            _nextFrameTime = Time.time + _secondsPerFrame;
-            _currentFrame = 0;
-        }
+        
 
         public void SetClip(string clipName)
         {
