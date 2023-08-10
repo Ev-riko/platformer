@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,10 +11,10 @@ namespace PixelCrew.Components
         [SerializeField] private Transform _destTransform;
         [SerializeField] private float _alphaTime = 1;
         [SerializeField] private float _moveTime = 1;
-        public void Teleport(GameObject target)
+        public void Teleport(Hero hero)
         {
             //target.transform.position = _destTransform.position;
-
+            GameObject target = hero.GameObject();
             StartCoroutine(AnimateTelepot(target));
         }
 
