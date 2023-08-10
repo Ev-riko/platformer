@@ -1,3 +1,4 @@
+using Assets.PixelCrew.Utils;
 using PixelCrew.Components;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,7 +10,8 @@ namespace PixelCrew
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpd;
-        [SerializeField] private float _highBorderFallSpd;
+        [SerializeField] private float _slamDownVelocity;
+
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
@@ -21,7 +23,7 @@ namespace PixelCrew
 
         [SerializeField] private SpawnComponent _footStepParticles;
         [SerializeField] private SpawnComponent _jumpParticles;
-        [SerializeField] private SpawnComponent _FallParticles;
+        [SerializeField] private SpawnComponent _SlamDownParticles;
         [SerializeField] private ParticleSystem _hitParticles;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
@@ -31,7 +33,6 @@ namespace PixelCrew
         private SpriteRenderer _sprite;
         private bool _isGrounded;
         private bool _allowDoubleJump;
-        private bool _isHigtFallSpeed;
         private bool _isJumping;
 
 
@@ -94,19 +95,8 @@ namespace PixelCrew
             
             if (_isGrounded)
             {
-                if(_isHigtFallSpeed && Mathf.Abs(yVelocity) < 0.001f)
-                { 
-                    SpawnFallDust();
-                    _isHigtFallSpeed = false;
-                }
-                    
                 _allowDoubleJump = true;
-
                 _isJumping = false;
-            }
-            else
-            {
-                _isHigtFallSpeed = -yVelocity > _highBorderFallSpd;
             }
 
             if (isLumpPressing)
@@ -226,6 +216,19 @@ namespace PixelCrew
             }
         }
 
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.IsInLayer(_groundLayer))
+            {
+                var contact = collision.contacts[0];
+                if(contact.relativeVelocity.y >= _slamDownVelocity)
+                {
+                    SpawnSlamDownDust();
+                }
+            }
+           
+        }
+
         public void SpawnFootStepDust()
         {
             _footStepParticles.Spawn();
@@ -236,9 +239,9 @@ namespace PixelCrew
             _jumpParticles.Spawn();
         }
 
-        public void SpawnFallDust()
+        public void SpawnSlamDownDust()
         {
-            _FallParticles.Spawn();
+            _SlamDownParticles.Spawn();
         }
     }
 }

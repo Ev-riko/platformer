@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 501510738}
   - component: {fileID: 501510739}
   m_Layer: 0
-  m_Name: FallPosition
+  m_Name: SlamDownPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5132,7 +5132,8 @@ MonoBehaviour:
   _speed: 3
   _jumpSpeed: 12
   _damageJumpSpd: 15
-  _highBorderFallSpd: 12
+  _highBorderFallSpd: 100
+  _slamDownVelocity: 12
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -5145,7 +5146,7 @@ MonoBehaviour:
   _gameObjectPotionEffect: {fileID: 6057377996897685737}
   _footStepParticles: {fileID: 610887924}
   _jumpParticles: {fileID: 908009148}
-  _FallParticles: {fileID: 501510739}
+  _SlamDownParticles: {fileID: 501510739}
   _hitParticles: {fileID: 2015572252}
 --- !u!114 &6057377996538258839
 MonoBehaviour:

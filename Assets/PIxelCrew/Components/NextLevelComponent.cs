@@ -4,12 +4,15 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NextLevelComponent : MonoBehaviour
+namespace PixelCrew.Components
 {
-    [SerializeField] private SceneAsset scene;
-
-    public void NextLevel()
+    public class NextLevelComponent : MonoBehaviour
     {
-        SceneManager.LoadScene(scene.name);
+        [SerializeField] private SceneAsset scene;
+
+        public void NextLevel()
+        {
+            SceneManager.LoadScene(scene.name);
+        }
     }
 }

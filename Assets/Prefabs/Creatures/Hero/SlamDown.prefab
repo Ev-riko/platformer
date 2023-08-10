@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4393407034573295723}
   - component: {fileID: 2015681539715400740}
   m_Layer: 0
-  m_Name: Fall
+  m_Name: SlamDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _clips:
-  - _name: Fall
+  - _name: SlamDown
     _sprites:
     - {fileID: 21300000, guid: 64144be6dc94e124097afcee8b59ca99, type: 3}
     - {fileID: 21300000, guid: f54b9208eb2262440afb953e4943fda2, type: 3}
