@@ -1,9 +1,9 @@
-using Assets.PixelCrew.Utils;
-using Assets.PIxelCrew;
-using Assets.PIxelCrew.Utils;
+
 using PixelCrew.Components;
+using PixelCrew.Utils;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace PixelCrew
@@ -26,6 +26,8 @@ namespace PixelCrew
         [SerializeField] private GameObject _gameObjectPotionEffect;
         [SerializeField] private CheckCircleOverlap _attackRange;
 
+        [SerializeField] private AnimatorController _armed;
+        [SerializeField] private AnimatorController _desarmed;
 
         [Space]
         [Header("Particles")]
@@ -51,6 +53,8 @@ namespace PixelCrew
         private static readonly int AttackKey = Animator.StringToHash("attack");
 
         private int _coins;
+
+        private bool _isArmed = false;
 
         private void Awake()
         {
@@ -238,8 +242,25 @@ namespace PixelCrew
 
         }
 
+        public void SpawnFootStepDust()
+        {
+            _footStepParticles.Spawn();
+        }
+
+        public void SpawnJumpDust()
+        {
+            _jumpParticles.Spawn();
+        }
+
+        public void SpawnSlamDownDust()
+        {
+            _SlamDownParticles.Spawn();
+        }
+
         public void Attack()
         {
+            if (!_isArmed) return;
+
             _animator.SetTrigger(AttackKey);
         }
 
@@ -257,19 +278,10 @@ namespace PixelCrew
             }
         }
 
-        public void SpawnFootStepDust()
+        public void ArmHero()
         {
-            _footStepParticles.Spawn();
-        }
-
-        public void SpawnJumpDust()
-        {
-            _jumpParticles.Spawn();
-        }
-
-        public void SpawnSlamDownDust()
-        {
-            _SlamDownParticles.Spawn();
+            _animator.runtimeAnimatorController = _armed;
+            _isArmed = true;
         }
     }
 }

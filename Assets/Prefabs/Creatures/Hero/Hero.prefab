@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &389652322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 389652323}
+  - component: {fileID: 389652324}
+  m_Layer: 0
+  m_Name: AttackRange
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &389652323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389652322}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.504, y: 0, z: 0}
+  m_LocalScale: {x: 1.63, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6057377996538258833}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &389652324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389652322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e394b2dc52329740858e1f13d2b984e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0.19
 --- !u!1 &501510737
 GameObject:
   m_ObjectHideFlags: 0
@@ -5031,7 +5076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6057377996538258833
 Transform:
   m_ObjectHideFlags: 0
@@ -5049,6 +5094,7 @@ Transform:
   - {fileID: 2015572254}
   - {fileID: 908009147}
   - {fileID: 501510738}
+  - {fileID: 389652323}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5094,7 +5140,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 356cb2771eae9124ebe834e3deb4cec1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5132,8 +5178,8 @@ MonoBehaviour:
   _speed: 3
   _jumpSpeed: 12
   _damageJumpSpd: 15
-  _highBorderFallSpd: 100
   _slamDownVelocity: 12
+  _damage: 1
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -5144,6 +5190,9 @@ MonoBehaviour:
   _groundCheckRadius: 0.3
   _groundCheckPositionDelta: {x: 0, y: -0.13, z: 0}
   _gameObjectPotionEffect: {fileID: 6057377996897685737}
+  _attackRange: {fileID: 389652324}
+  _armed: {fileID: 9100000, guid: f2edede420ddfd3488459d93f8df9bd6, type: 2}
+  _desarmed: {fileID: 9100000, guid: 1253af38cdd93c54ab474f02743cf068, type: 2}
   _footStepParticles: {fileID: 610887924}
   _jumpParticles: {fileID: 908009148}
   _SlamDownParticles: {fileID: 501510739}
@@ -5155,7 +5204,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6057377996538258844}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -5221,6 +5270,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8c56a9b5-fbe6-418c-a38e-b9ea3e53d8f0
     m_ActionName: Hero/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6057377996538258835}
+        m_TargetAssemblyTypeName: PixelCrew.HeroInputReader, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d024e627-ae6d-4527-86f8-d71ddc438e2c
+    m_ActionName: Hero/Attack[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
