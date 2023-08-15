@@ -23,7 +23,8 @@ namespace PixelCrew
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
 
-        [SerializeField] private GameObject _gameObjectPotionEffect;
+        [SerializeField] private GameObject _AttackEffect;
+        [SerializeField] private GameObject _PotionEffect;
         [SerializeField] private CheckCircleOverlap _attackRange;
 
         [SerializeField] private AnimatorController _armed;
@@ -72,7 +73,7 @@ namespace PixelCrew
 
         private void Start()
         {
-            _gameObjectPotionEffect.SetActive(false);
+            _PotionEffect.SetActive(false);
             _coins = 0;
         }
 
@@ -182,7 +183,7 @@ namespace PixelCrew
 
         public void PlayPotionEffectAnimation()
         {
-            _gameObjectPotionEffect.SetActive(true);
+            _PotionEffect.SetActive(true);
         }
 
         public void TakeDamage()
@@ -266,6 +267,7 @@ namespace PixelCrew
 
         public void MakeAttack()
         {
+            PlayAttackEffectAnimation();
             Debug.Log("OnAttack");
             var gos = _attackRange.GetObjectsInRange();
             foreach (var go in gos)
@@ -282,6 +284,11 @@ namespace PixelCrew
         {
             _animator.runtimeAnimatorController = _armed;
             _isArmed = true;
+        }
+
+        public void PlayAttackEffectAnimation()
+        {
+            _AttackEffect.SetActive(true);
         }
     }
 }
