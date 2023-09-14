@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,7 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onDie;
         [SerializeField] private UnityEvent _onHeal;
+        [SerializeField] private HealthChangeEvent _onChange;
 
         private int _health;
 
@@ -19,10 +21,12 @@ namespace PixelCrew.Components
 
         public void ModifyHealth(int healthDelta)
         {
+            _onChange?.Invoke(_health);
             if (healthDelta > 0) 
             {   
                 _health = System.Math.Min(_maxHealth, _health + healthDelta);
                 Debug.Log($"HealValue: {healthDelta}, _health: {_health}");
+
                 Debug.Log($"_onHeal");
                 _onHeal?.Invoke();
             }
@@ -42,5 +46,21 @@ namespace PixelCrew.Components
                 }
             }  
         }
+
+#if UNITY_EDITOR
+        [ContextMenu("Update Health")]
+        public void UpdateHealth()
+        {
+            _onChange?.Invoke(_health);
+        }
+#endif
+
+        public void SetHealth(int health)
+        {
+            _health = health;
+        }
+
+        [Serializable]
+        public class HealthChangeEvent : UnityEvent<int> { }
     }
 }
