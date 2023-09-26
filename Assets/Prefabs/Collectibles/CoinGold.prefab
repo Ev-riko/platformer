@@ -130,7 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36cfa61c33a024f4792a740401584c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hero: {fileID: 6057377996538258832, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
 --- !u!114 &5968505668073303600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +191,7 @@ MonoBehaviour:
     - {fileID: -1542175296, guid: 4b0ce02742649fa4c898e53194a05846, type: 3}
     - {fileID: 1557346157, guid: 4b0ce02742649fa4c898e53194a05846, type: 3}
     _loop: 1
-    _allowNextClip: 1
+    _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:
         m_Calls: []

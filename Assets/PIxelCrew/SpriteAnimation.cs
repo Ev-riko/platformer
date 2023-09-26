@@ -52,7 +52,7 @@ namespace PixelCrew
         private void OnBecameInvisible()
         {
             //Debug.Log("OnBecameInvisible");
-            enabled = _isPlaing;
+            enabled = false;
         }
 
         private void Update()

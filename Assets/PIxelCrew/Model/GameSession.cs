@@ -10,10 +10,12 @@ namespace Assets.PIxelCrew.Components.Model
     public class GameSession : MonoBehaviour
     {
         [SerializeField] private PlayerData _data;
+        private PlayerData _startData;
         public PlayerData Data { get { return _data; } }
 
         private void Awake()
         {
+            
             if (IsSessionExit())
             {
                 DestroyImmediate(gameObject);
@@ -36,6 +38,20 @@ namespace Assets.PIxelCrew.Components.Model
                 }
             }
             return false;
+        }
+
+        public void SetStartData()
+        {
+            _startData.Copy(_data);
+        }
+
+        public void ReloadData()
+        {
+            if (_startData == null)
+            {
+                _startData = new PlayerData(0, 5, false);
+            }
+            _data.Copy(_startData);
         }
     }
 }
