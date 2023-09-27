@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 2207278877387836696}
   m_Layer: 8
   m_Name: DestroyedParticles
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
