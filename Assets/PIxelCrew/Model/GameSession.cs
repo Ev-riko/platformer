@@ -15,7 +15,12 @@ namespace PixelCrew.Components.Model
 
         private void Awake()
         {
-            
+            if (_startData == null)
+            {
+                _startData = new PlayerData(0, 5, false);
+            }
+
+
             if (IsSessionExit())
             {
                 DestroyImmediate(gameObject);
@@ -41,16 +46,12 @@ namespace PixelCrew.Components.Model
         }
 
         public void SetStartData()
-        {
+        {            
             _startData.Copy(_data);
         }
 
         public void ReloadData()
         {
-            if (_startData == null)
-            {
-                _startData = new PlayerData(0, 5, false);
-            }
             _data.Copy(_startData);
         }
     }

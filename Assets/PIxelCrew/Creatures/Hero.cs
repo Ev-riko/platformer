@@ -6,63 +6,42 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 namespace PixelCrew.Creatures
 {
-    public class Hero : MonoBehaviour
+    public class Hero : Creature
     {
-        [SerializeField] private float _speed;
-        [SerializeField] private float _jumpSpeed;
-        [SerializeField] private float _damageJumpSpd;
         [SerializeField] private float _slamDownVelocity;
-        [SerializeField] private int _damage;
 
-        [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
         [SerializeField] private LayerCheck _wallCheck;
 
-        [SerializeField] private float _groundCheckRadius;
-        [SerializeField] private Vector3 _groundCheckPositionDelta;
-
         [SerializeField] private GameObject _AttackEffect;
         [SerializeField] private GameObject _PotionEffect;
-        [SerializeField] private CheckCircleOverlap _attackRange;
+
 
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _desarmed;
 
         [Space]
         [Header("Particles")]
-        [SerializeField] private SpawnComponent _footStepParticles;
-        [SerializeField] private SpawnComponent _jumpParticles;
-        [SerializeField] private SpawnComponent _SlamDownParticles;
         [SerializeField] private ParticleSystem _hitParticles;
 
         private Collider2D[] _interactionResult = new Collider2D[1];
-        private Vector2 _direction;
-        private Rigidbody2D _rigitbody;
-        private Animator _animator;
 
-        private bool _isGrounded;
         private bool _allowDoubleJump;
-        private bool _isJumping;
+
         private bool _isOnWall;
         private float _defaultGravityScale;
 
-        private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
-        private static readonly int IsRunningKey = Animator.StringToHash("is-running");
-        private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
-        private static readonly int Hit = Animator.StringToHash("hit");
-        private static readonly int AttackKey = Animator.StringToHash("attack");
 
         private GameSession _session;
-        
 
-        private void Awake()
+        protected override void Awake()
         {
-            _rigitbody = GetComponent<Rigidbody2D>();
-            _animator = GetComponent<Animator>();
+            base.Awake();
             _defaultGravityScale = _rigitbody.gravityScale;
         }
 
@@ -85,17 +64,12 @@ namespace PixelCrew.Creatures
             _session.Data.Hp = currentHealth;
         }
 
-        public void SetDirection(Vector2 direction)
+
+
+
+        protected override void Update()
         {
-            _direction = direction;
-        }
-
-
-
-        private void Update()
-        {
-            _isGrounded = IsGrounded();
-
+            base.Update();
             if (_wallCheck.IsTouchingLayer && _direction.x == transform.localScale.x)
             {
                 _isOnWall = true;
@@ -108,96 +82,35 @@ namespace PixelCrew.Creatures
             }
         }
 
-        private void FixedUpdate()
+
+
+        protected override float CalculateYVelosity()
         {
-            var xVelocity = _direction.x * _speed;
-            var yVelocity = CalculateYVelosity();
-            _rigitbody.velocity = new Vector2(xVelocity, yVelocity);
+            var isJumpPressing = _direction.y > 0;
 
-            _animator.SetFloat(VerticalVelocityKey, _rigitbody.velocity.y);
-            _animator.SetBool(IsRunningKey, _direction.x != 0);
-            _animator.SetBool(IsGroundKey, _isGrounded);
-
-            UpdateSpriteDirection();
-        }
-
-        private float CalculateYVelosity()
-        {
-            var yVelocity = _rigitbody.velocity.y;
-            var isLumpPressing = _direction.y > 0;
-
-            if (_isGrounded)
-            {
-                _allowDoubleJump = true;
-                _isJumping = false;
-            }
-
-            if(_isOnWall)
+            if (_isGrounded || _isOnWall)
             {
                 _allowDoubleJump = true;
             }
 
-            if (isLumpPressing)
+            if (!isJumpPressing && _isOnWall)
             {
-                _isJumping = true;
-                yVelocity = CalculateJumpVelosity(yVelocity);
+                return 0;
             }
-            else if (_isOnWall)
-            {
-                yVelocity = 0;
-            }
-            else if (_rigitbody.velocity.y > 0 && _isJumping)
-            {
-                yVelocity *= 0.5f;
-            }
-            return yVelocity;
+
+            return base.CalculateYVelosity();
         }
 
-        private float CalculateJumpVelosity(float yVelocity)
+        protected override float CalculateJumpVelosity(float yVelocity)
         {
-            var isFalling = _rigitbody.velocity.y <= 0.001f;
-            if (!isFalling) return yVelocity;
-            if (_isGrounded)
+            if (!_isGrounded && _allowDoubleJump)
             {
-                yVelocity += _jumpSpeed;
-                Debug.Log("Jump");
-                SpawnJumpDust();
-            }
-            else if (_allowDoubleJump)
-            {
-                yVelocity = _jumpSpeed;
+                _particles.Spawn("Jump");
                 _allowDoubleJump = false;
-                Debug.Log("DoubleJump");
-                SpawnJumpDust();
+                return _jumpSpeed;
             }
-            return yVelocity;
+            return base.CalculateJumpVelosity(yVelocity);
         }
-
-        private void UpdateSpriteDirection()
-        {
-            if (_direction.x > 0)
-            {
-                transform.localScale = Vector3.one;
-            }
-            else if (_direction.x < 0)
-            {
-                transform.localScale = new Vector3(-1, 1, 1);
-            }
-        }
-
-        private bool IsGrounded()
-        {
-            var hit = Physics2D.CircleCast(transform.position + _groundCheckPositionDelta, _groundCheckRadius,
-                Vector2.down, 0, _groundLayer);
-            return hit.collider != null;
-        }
-#if UNITY_EDITOR
-        private void OnDrawGizmos()
-        {
-            Handles.color = IsGrounded() ? HandlesUtils.TransparentGreen : HandlesUtils.TransparentRed;
-            Handles.DrawSolidDisc(transform.position + _groundCheckPositionDelta, Vector3.forward, _groundCheckRadius);
-        }
-#endif
         public void SaySomething()
         {
             Debug.Log("Something");
@@ -214,12 +127,10 @@ namespace PixelCrew.Creatures
             _PotionEffect.SetActive(true);
         }
 
-        public void TakeDamage()
+        public override void TakeDamage()
         {
-            Debug.Log("TakeDamage");
-            _isJumping = false;
-            _animator.SetTrigger(Hit);
-            _rigitbody.velocity = new Vector2(_rigitbody.velocity.x, _damageJumpSpd);
+            base.TakeDamage();
+
             Debug.Log($"_coins: {_session.Data.Coins}");
             if (_session.Data.Coins > 0)
                 SpawnCoinsParticles();
@@ -265,53 +176,30 @@ namespace PixelCrew.Creatures
                 var contact = collision.contacts[0];
                 if (contact.relativeVelocity.y >= _slamDownVelocity)
                 {
-                    SpawnSlamDownDust();
+                    _particles.Spawn("SlamDown");
                 }
             }
 
         }
 
-        public void SpawnFootStepDust()
-        {
-            _footStepParticles.Spawn();
-        }
-
-        public void SpawnJumpDust()
-        {
-            _jumpParticles.Spawn();
-        }
-
-        public void SpawnSlamDownDust()
-        {
-            _SlamDownParticles.Spawn();
-        }
-
-        public void Attack()
+        
+        public override void Attack()
         {
             if (!_session.Data.IsArmed) return;
 
-            _animator.SetTrigger(AttackKey);
+            base.Attack();
         }
 
-        public void MakeAttack()
+        public override void MakeAttack()
         {
             PlayAttackEffectAnimation();
-            Debug.Log("OnAttack");
-            var gos = _attackRange.GetObjectsInRange();
-            foreach (var go in gos)
-            {
-                var hp = go.GetComponent<HealthComponent>();
-                if (hp != null && go.CompareTag("Enemy"))
-                {
-                    hp.ModifyHealth(-_damage);
-                }
-            }
+            base.MakeAttack();
         }
 
         public void ArmHero()
         {
-            _animator.runtimeAnimatorController = _armed;
             _session.Data.IsArmed = true;
+            UpdateHeroWeapon();           
         }
 
         public void PlayAttackEffectAnimation()
