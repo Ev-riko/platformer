@@ -10,12 +10,16 @@ namespace PixelCrew.Components
 
         private void Awake()
         {
+            Debug.Log("Awake");
             _hero = FindObjectOfType<Hero>();
             _collider = GetComponent<Collider2D>();
         }
 
+
+
         public void AddCoin(int count)
         {
+            if (_hero == null) Awake();
             _hero.AddCoins(count);
             _collider.enabled = false;
         }

@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3432527127221867672
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5968505668073303597, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: _clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303599, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303599, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303599, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303599, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303599, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303599, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303599, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303599, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303599, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303599, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303599, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303601, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303601, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303605, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_Name
+      value: CoinGold Physic Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968505668073303605, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5968505668073303600, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+--- !u!114 &9040604016703814314 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5968505668073303602, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+  m_PrefabInstance: {fileID: 3432527127221867672}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040604016703814317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36cfa61c33a024f4792a740401584c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9040604016703814315 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5968505668073303603, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+  m_PrefabInstance: {fileID: 3432527127221867672}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040604016703814317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a887cffff050ad409fbcd365c16c88c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &9040604016703814317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5968505668073303605, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+  m_PrefabInstance: {fileID: 3432527127221867672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &9161101999500595975
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040604016703814317}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 9142fc9c6ed998044b4a4c77482079b0, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &2564778953616614093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040604016703814317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb35ecc31835844dadb4d1bdcda227e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Player
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9040604016703814314}
+        m_TargetAssemblyTypeName: PixelCrew.Components.CountCoinComponent, Assembly-CSharp
+        m_MethodName: AddCoin
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3612050815027323019}
+        m_TargetAssemblyTypeName: PixelCrew.Components.SpawnComponent, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9040604016703814315}
+        m_TargetAssemblyTypeName: PixelCrew.Components.DestroyOdjectComponent, Assembly-CSharp
+        m_MethodName: DestroyOdject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3612050815027323019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040604016703814317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eae3afc40c065b49bc85a86761c37c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 9040604016703814327}
+  _prefab: {fileID: 3501563942128547755, guid: a5765871fefa0724c969676a96143087, type: 3}
+--- !u!4 &9040604016703814327 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5968505668073303599, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+  m_PrefabInstance: {fileID: 3432527127221867672}
+  m_PrefabAsset: {fileID: 0}
