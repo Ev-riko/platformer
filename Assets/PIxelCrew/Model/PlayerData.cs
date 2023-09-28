@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Assets.PIxelCrew.Components.Model
+namespace Assets.PixelCrew.Components.Model
 {
     [Serializable]
     public class PlayerData

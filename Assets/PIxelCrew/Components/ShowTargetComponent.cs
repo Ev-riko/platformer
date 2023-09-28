@@ -1,4 +1,4 @@
-using Assets.PIxelCrew.Components;
+using Assets.PixelCrew.Components;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

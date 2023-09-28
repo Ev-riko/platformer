@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.PIxelCrew.Components.Model
+namespace Assets.PixelCrew.Components.Model
 {
     public class GameSession : MonoBehaviour
     {

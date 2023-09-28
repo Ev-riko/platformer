@@ -1,5 +1,5 @@
 
-using Assets.PIxelCrew.Components.Model;
+using Assets.PixelCrew.Components.Model;
 using PixelCrew.Components;
 using PixelCrew.Utils;
 using Unity.VisualScripting;
