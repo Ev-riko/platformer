@@ -1,4 +1,4 @@
-using Assets.PixelCrew.Components.Model;
+using PixelCrew.Components.Model;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;

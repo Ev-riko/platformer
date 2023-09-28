@@ -1,7 +1,7 @@
 ﻿using Cinemachine;
 using UnityEngine;
 
-namespace Assets.PixelCrew.Components
+namespace PixelCrew.Components
 {
     public class CameraStateController : MonoBehaviour
     {

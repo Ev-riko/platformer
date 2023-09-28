@@ -1,5 +1,5 @@
 
-using Assets.PixelCrew.Components.Model;
+using PixelCrew.Components.Model;
 using PixelCrew.Components;
 using PixelCrew.Utils;
 using Unity.VisualScripting;
@@ -7,7 +7,7 @@ using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
 
-namespace PixelCrew
+namespace PixelCrew.Creatures
 {
     public class Hero : MonoBehaviour
     {
