@@ -14,8 +14,7 @@ namespace PixelCrew.Creatures
     {
         [SerializeField] private float _slamDownVelocity;
 
-        [SerializeField] private float _interactionRadius;
-        [SerializeField] private LayerMask _interactionLayer;
+        [SerializeField] private CheckCircleOverlap _interactionCheck;
         [SerializeField] private LayerCheck _wallCheck;
 
         [SerializeField] private GameObject _AttackEffect;
@@ -29,7 +28,6 @@ namespace PixelCrew.Creatures
         [Header("Particles")]
         [SerializeField] private ParticleSystem _hitParticles;
 
-        private Collider2D[] _interactionResult = new Collider2D[1];
 
         private bool _allowDoubleJump;
 
@@ -152,21 +150,7 @@ namespace PixelCrew.Creatures
 
         public void Interact()
         {
-            var size = Physics2D.OverlapCircleNonAlloc(
-                transform.position,
-                _interactionRadius,
-                _interactionResult,
-                _interactionLayer);
-            Debug.Log($"Interact, size: {size}");
-
-            for (int i = 0; i < size; i++)
-            {
-                var interactble = _interactionResult[i].GetComponent<InteractableComponent>();
-                if (interactble != null)
-                {
-                    interactble.Interact();
-                }
-            }
+            _interactionCheck.Check();
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

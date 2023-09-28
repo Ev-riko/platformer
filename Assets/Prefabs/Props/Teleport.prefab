@@ -4859,7 +4859,7 @@ GameObject:
   - component: {fileID: 6362809994261066233}
   m_Layer: 7
   m_Name: Teleport
-  m_TagString: Untagged
+  m_TagString: Interactble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
