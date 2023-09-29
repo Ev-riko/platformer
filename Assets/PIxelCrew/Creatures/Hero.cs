@@ -17,10 +17,6 @@ namespace PixelCrew.Creatures
         [SerializeField] private CheckCircleOverlap _interactionCheck;
         [SerializeField] private LayerCheck _wallCheck;
 
-        [SerializeField] private GameObject _AttackEffect;
-        [SerializeField] private GameObject _PotionEffect;
-
-
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _desarmed;
 
@@ -30,7 +26,6 @@ namespace PixelCrew.Creatures
 
 
         private bool _allowDoubleJump;
-
         private bool _isOnWall;
         private float _defaultGravityScale;
 
@@ -120,9 +115,9 @@ namespace PixelCrew.Creatures
             Debug.Log($"Added: {coins} Total: {_session.Data.Coins}");
         }
 
-        public void PlayPotionEffectAnimation()
+        public void PlayPotionEffect()
         {
-            _PotionEffect.SetActive(true);
+            _particles.Spawn("Potion");
         }
 
         public override void TakeDamage()
@@ -174,21 +169,10 @@ namespace PixelCrew.Creatures
             base.Attack();
         }
 
-        public override void MakeAttack()
-        {
-            PlayAttackEffectAnimation();
-            base.MakeAttack();
-        }
-
         public void ArmHero()
         {
             _session.Data.IsArmed = true;
             UpdateHeroWeapon();           
-        }
-
-        public void PlayAttackEffectAnimation()
-        {
-            _AttackEffect.SetActive(true);
         }
 
         public void UpdateHeroWeapon()

@@ -121,6 +121,7 @@ namespace PixelCrew.Creatures
         {
             Debug.Log("OnAttack");
             _attackRange.Check();
+            _particles.Spawn("Attack");
             
         }
     }

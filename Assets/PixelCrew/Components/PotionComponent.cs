@@ -11,7 +11,7 @@ namespace PixelCrew.Components
             var hero = target.GetComponent<Hero>();
             if (hero != null)
             {
-                hero.PlayPotionEffectAnimation();
+                hero.PlayPotionEffect();
             }
         }
     }

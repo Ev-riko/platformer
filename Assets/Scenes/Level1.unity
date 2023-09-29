@@ -631,61 +631,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1390965595}
     m_Modifications:
-    - target: {fileID: 389652324, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
-      propertyPath: _mask.m_Bits
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 389652324, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
-      propertyPath: _tags.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 389652324, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
-      propertyPath: _tags.Array.data[0]
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 389652324, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
-      propertyPath: _onOverlap.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 389652324, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
-      propertyPath: _onOverlap.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 389652324, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
-      propertyPath: _onOverlap.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 57562517}
-    - target: {fileID: 389652324, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
-      propertyPath: _onOverlap.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 389652324, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
-      propertyPath: _onOverlap.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ModifyHealth
-      objectReference: {fileID: 0}
-    - target: {fileID: 389652324, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
-      propertyPath: _onOverlap.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PixelCrew.Components.ModifyHealthComponent, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 389652324, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
-      propertyPath: _onOverlap.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6057377996538258832, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
-      propertyPath: _interactionCheck
-      value: 
-      objectReference: {fileID: 519823282}
     - target: {fileID: 6057377996538258833, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6057377996538258833, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.67
+      value: -1.9200001
       objectReference: {fileID: 0}
     - target: {fileID: 6057377996538258833, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6242087
+      value: -2.8742087
       objectReference: {fileID: 0}
     - target: {fileID: 6057377996538258833, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -725,24 +681,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
---- !u!1 &57562516 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 389652322, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
-  m_PrefabInstance: {fileID: 57562515}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &57562517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57562516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b2d04bff196b644192534c1411779f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _power: -1
 --- !u!4 &124918053 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1922950682517671299, guid: 99395bb0f02e95a4787d9ae6086819e1, type: 3}
@@ -894,6 +832,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1661421557}
     m_Modifications:
+    - target: {fileID: 1143083053, guid: d70fcb443bde5bd47af54e9a0f7655c7, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143083053, guid: d70fcb443bde5bd47af54e9a0f7655c7, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1467513001}
+    - target: {fileID: 1143083053, guid: d70fcb443bde5bd47af54e9a0f7655c7, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StartPotionAnimation
+      objectReference: {fileID: 0}
+    - target: {fileID: 1143083053, guid: d70fcb443bde5bd47af54e9a0f7655c7, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PixelCrew.Components.PotionComponent, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3820198953154453635, guid: d70fcb443bde5bd47af54e9a0f7655c7, type: 3}
       propertyPath: m_Name
       value: PotionHeal (1)
@@ -1611,85 +1565,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6106162535702516142, guid: 3728a49e37086b247b6179050c81cb2b, type: 3}
   m_PrefabInstance: {fileID: 761312045}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &519823279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 519823280}
-  - component: {fileID: 519823282}
-  - component: {fileID: 519823281}
-  m_Layer: 0
-  m_Name: InteractionCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &519823280
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519823279}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.186, y: 0.036, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1753636231}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519823281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519823279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8c5b0223b0c62844bbde07b713ccc2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &519823282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519823279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e394b2dc52329740858e1f13d2b984e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 0.5
-  _mask:
-    serializedVersion: 2
-    m_Bits: 128
-  _tags:
-  - Interactble
-  _onOverlap:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 519823281}
-        m_TargetAssemblyTypeName: Assets.PIxelCrew.Components.DoInteractionComponent,
-          Assembly-CSharp
-        m_MethodName: DoInteraction
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &526384711
 GameObject:
   m_ObjectHideFlags: 0
@@ -4682,6 +4557,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 326447519688443169, guid: d940e14eadf7f0340ba79164b6dcf204, type: 3}
   m_PrefabInstance: {fileID: 1060585109}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1467512993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3820198953154453635, guid: d70fcb443bde5bd47af54e9a0f7655c7, type: 3}
+  m_PrefabInstance: {fileID: 269133830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1467513001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467512993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280531a62313b874da942b55bf2c8790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1467589377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4060524945860270075, guid: 21679094e9a82b343a4c6f1e751bfaad, type: 3}
@@ -10030,7 +9922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4412248388765114203, guid: 84e9f71647b35f64a9a5dfd48ad8eeac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.9259834
+      value: -11.4
       objectReference: {fileID: 0}
     - target: {fileID: 4412248388765114203, guid: 84e9f71647b35f64a9a5dfd48ad8eeac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10490,11 +10382,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7078937665297592996, guid: 6dcd13c3240263f49be65130c2605ea2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.187914
+      value: -4.437914
       objectReference: {fileID: 0}
     - target: {fileID: 7078937665297592996, guid: 6dcd13c3240263f49be65130c2605ea2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.109999895
+      value: -0.3599999
       objectReference: {fileID: 0}
     - target: {fileID: 7078937665297592996, guid: 6dcd13c3240263f49be65130c2605ea2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10726,11 +10618,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437689903049945705, guid: 0fec3e7e4fea6fb4ca9e105023597112, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.069374
+      value: 1.6806259
       objectReference: {fileID: 0}
     - target: {fileID: 8437689903049945705, guid: 0fec3e7e4fea6fb4ca9e105023597112, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8276691
+      value: -3.0776691
       objectReference: {fileID: 0}
     - target: {fileID: 8437689903049945705, guid: 0fec3e7e4fea6fb4ca9e105023597112, type: 3}
       propertyPath: m_LocalPosition.z

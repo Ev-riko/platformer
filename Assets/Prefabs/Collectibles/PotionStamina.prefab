@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3814069891834900091}
   - component: {fileID: 1143083052}
   - component: {fileID: 1143083053}
-  - component: {fileID: -854854751630870800}
+  - component: {fileID: 1581765344}
   m_Layer: 0
   m_Name: PotionStamina
   m_TagString: Untagged
@@ -175,7 +175,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -854854751630870800}
+      - m_Target: {fileID: 1581765344}
         m_TargetAssemblyTypeName: PixelCrew.Components.PotionComponent, Assembly-CSharp
         m_MethodName: StartPotionAnimation
         m_Mode: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Potion
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1143083052}
@@ -199,7 +199,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &-854854751630870800
+--- !u!114 &1581765344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
