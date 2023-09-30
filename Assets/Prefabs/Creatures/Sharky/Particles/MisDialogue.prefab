@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7102028105983095036
+--- !u!1 &935315487751486730
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7102028105983095035}
-  - component: {fileID: 7102028105983095034}
-  - component: {fileID: -1378674818169781816}
+  - component: {fileID: 4035185730677131032}
+  - component: {fileID: 3809715040251939160}
+  - component: {fileID: 4393407034573295723}
+  - component: {fileID: 2015681539715400740}
   m_Layer: 0
-  m_Name: ChainSmall
+  m_Name: MisDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7102028105983095035
+--- !u!4 &4035185730677131032
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7102028105983095036}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.659096, y: -1.6245272, z: 0.036807775}
+  m_GameObject: {fileID: 935315487751486730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7102028105983095034
+--- !u!212 &3809715040251939160
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7102028105983095036}
+  m_GameObject: {fileID: 935315487751486730}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -71,27 +72,27 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2102391335
-  m_SortingLayer: 2
+  m_SortingLayerID: 471607717
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1035230668, guid: 9fcd9abbbd1c2f64abb136cc6020dfa5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.625, y: 0.625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1378674818169781816
+--- !u!114 &4393407034573295723
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7102028105983095036}
+  m_GameObject: {fileID: 935315487751486730}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7506044e7ccc8c047aab72f9b025bed2, type: 3}
@@ -99,21 +100,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _clips:
-  - _name: Idle
+  - _name: MIs
     _sprites:
-    - {fileID: 1035230668, guid: 9fcd9abbbd1c2f64abb136cc6020dfa5, type: 3}
-    - {fileID: -263351388, guid: 9fcd9abbbd1c2f64abb136cc6020dfa5, type: 3}
-    - {fileID: 1799227999, guid: 9fcd9abbbd1c2f64abb136cc6020dfa5, type: 3}
-    - {fileID: 1201117936, guid: 9fcd9abbbd1c2f64abb136cc6020dfa5, type: 3}
-    - {fileID: -1065166852, guid: 9fcd9abbbd1c2f64abb136cc6020dfa5, type: 3}
-    - {fileID: -858603493, guid: 9fcd9abbbd1c2f64abb136cc6020dfa5, type: 3}
-    - {fileID: 582306604, guid: 9fcd9abbbd1c2f64abb136cc6020dfa5, type: 3}
-    - {fileID: -1792767522, guid: 9fcd9abbbd1c2f64abb136cc6020dfa5, type: 3}
-    _loop: 1
+    - {fileID: 21300000, guid: 0a93f06b671800a46acec13f56638c1a, type: 3}
+    - {fileID: 21300000, guid: 092b6cf97b50df147baa914e211cdb7b, type: 3}
+    - {fileID: 21300000, guid: c7e5575d447986740a645c092adfd3ec, type: 3}
+    - {fileID: 21300000, guid: a2250a6d1b98ff042b122ccdff94daf6, type: 3}
+    - {fileID: 21300000, guid: 238135e792472c346bc99e2e3d5e5173, type: 3}
+    _loop: 0
     _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
   _onComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2015681539715400740}
+        m_TargetAssemblyTypeName: PixelCrew.Components.DestroyOdjectComponent, Assembly-CSharp
+        m_MethodName: DestroyOdject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2015681539715400740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935315487751486730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a887cffff050ad409fbcd365c16c88c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 935315487751486730}
