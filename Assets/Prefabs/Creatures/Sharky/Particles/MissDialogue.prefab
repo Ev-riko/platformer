@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4393407034573295723}
   - component: {fileID: 2015681539715400740}
   m_Layer: 0
-  m_Name: MisDialogue
+  m_Name: MissDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7506044e7ccc8c047aab72f9b025bed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 10
+  _frameRate: 5
   _clips:
-  - _name: MIs
+  - _name: MIss
     _sprites:
     - {fileID: 21300000, guid: 0a93f06b671800a46acec13f56638c1a, type: 3}
     - {fileID: 21300000, guid: 092b6cf97b50df147baa914e211cdb7b, type: 3}

@@ -34,15 +34,12 @@ namespace PixelCrew.Components
             {
                 _health += healthDelta;
                 Debug.Log($"DamageValue: {healthDelta}, _health: {_health}");
+                Debug.Log($"_onDamage");
+                _onDamage?.Invoke();
                 if (_health <= 0)
                 {
                     Debug.Log($"_onDie");
                     _onDie?.Invoke();
-                }
-                else
-                {
-                    Debug.Log($"_onDamage");
-                    _onDamage?.Invoke();
                 }
             }  
         }

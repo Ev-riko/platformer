@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e394b2dc52329740858e1f13d2b984e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.32
+  _radius: 0.4
   _mask:
     serializedVersion: 2
     m_Bits: 2039
@@ -5473,6 +5473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a00d8b26f75fe429d2ba35f8d46a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _invertScale: 0
   _speed: 3
   _jumpSpeed: 12
   _damageJumpSpd: 15
@@ -5486,7 +5487,6 @@ MonoBehaviour:
   _slamDownVelocity: 12
   _interactionCheck: {fileID: 519823282}
   _wallCheck: {fileID: 509610119}
-  _PotionEffect: {fileID: 6057377996897685737}
   _armed: {fileID: 9100000, guid: f2edede420ddfd3488459d93f8df9bd6, type: 2}
   _desarmed: {fileID: 9100000, guid: 1253af38cdd93c54ab474f02743cf068, type: 2}
   _hitParticles: {fileID: 2015572252}
