@@ -5579,6 +5579,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d024e627-ae6d-4527-86f8-d71ddc438e2c
     m_ActionName: Hero/Attack[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6057377996538258835}
+        m_TargetAssemblyTypeName: PixelCrew.HeroInputReader, Assembly-CSharp
+        m_MethodName: OnThrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3c5093d0-7fdc-407f-bcfa-50f9d245acfc
+    m_ActionName: Hero/Throw[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5631,7 +5647,7 @@ Animator:
   m_GameObject: {fileID: 6057377996538258844}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1253af38cdd93c54ab474f02743cf068, type: 2}
+  m_Controller: {fileID: 9100000, guid: f2edede420ddfd3488459d93f8df9bd6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

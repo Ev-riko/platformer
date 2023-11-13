@@ -7,6 +7,7 @@ using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
+using System;
 
 namespace PixelCrew.Creatures
 {
@@ -29,6 +30,7 @@ namespace PixelCrew.Creatures
         private bool _isOnWall;
         private float _defaultGravityScale;
 
+        private static readonly int ThrowKey = Animator.StringToHash("throw");
 
         private GameSession _session;
 
@@ -180,5 +182,15 @@ namespace PixelCrew.Creatures
             _animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _desarmed;
         }
 
+        public void OnDoThrow()
+        {
+
+        }
+
+        public void Throw()
+        {
+            Debug.Log("Throw");
+            _animator.SetTrigger(ThrowKey);
+        }
     }
 }

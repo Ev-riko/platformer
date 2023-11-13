@@ -3196,6 +3196,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1390965595}
     m_Modifications:
+    - target: {fileID: -8930255572563592464, guid: c42cb5ac84450294f89cc3015f4e3bac, type: 3}
+      propertyPath: _maxHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1846110495, guid: c42cb5ac84450294f89cc3015f4e3bac, type: 3}
       propertyPath: _points.Array.data[0]
       value: 
@@ -3248,6 +3252,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6057377996538258834, guid: c42cb5ac84450294f89cc3015f4e3bac, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3dfd054282046a348ba7b6ef17bb8b70, type: 3}
     - target: {fileID: 6057377996538258844, guid: c42cb5ac84450294f89cc3015f4e3bac, type: 3}
       propertyPath: m_Name
       value: Sharky
