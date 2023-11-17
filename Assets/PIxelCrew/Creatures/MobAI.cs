@@ -51,11 +51,19 @@ public class MobAI : MonoBehaviour
 
     private IEnumerator AgroToHero()
     {
+        LookAtHero();
         Debug.Log("Exclamation");
         _particles.Spawn("Exclamation");
         yield return new WaitForSeconds(_alarmDelay);
 
         StartState(GoToHero());
+    }
+
+    private void LookAtHero()
+    {
+        var direction = GetDiractionToTarget();
+        _creature.SetDirection(Vector2.zero);
+        _creature.UpdateSpriteDirection(direction);
     }
 
     private IEnumerator GoToHero()
@@ -74,8 +82,11 @@ public class MobAI : MonoBehaviour
             yield return null;
         }
 
+        _creature.SetDirection(Vector2.zero);
         _particles.Spawn("MissHero");
         yield return new WaitForSeconds(_MissHeroCooldown);
+
+        StartState(_patrol.DoPatrol());
     }
 
     private IEnumerator Attack()
@@ -92,11 +103,18 @@ public class MobAI : MonoBehaviour
     private void SetDirectionToTarget()
     {
         //Debug.Log("SetDirectionToTarget");
-        var direction = _target.transform.position - transform.position;
-        direction.y = direction.z = 0;
-        direction.Normalize();
+        var direction = GetDiractionToTarget();
+
         _creature.SetDirection(direction);
     }
+
+    private Vector2 GetDiractionToTarget()
+    {
+        var direction = _target.transform.position - transform.position;
+        direction.y = 0;
+        return direction.normalized;
+    }
+
     private void StartState(IEnumerator coroutine)
     {
         _creature.SetDirection(Vector2.zero);
@@ -110,6 +128,7 @@ public class MobAI : MonoBehaviour
     {
          _isDead = true;
         _animator.SetBool(IsDeadKey, true);
+        _creature.SetDirection(Vector2.zero);
 
         if (_current != null)
             StopCoroutine(_current);

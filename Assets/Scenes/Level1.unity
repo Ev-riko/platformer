@@ -631,6 +631,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1390965595}
     m_Modifications:
+    - target: {fileID: 4423276187767836189, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
+      propertyPath: _space
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423276187767836189, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
+      propertyPath: _prefab
+      value: 
+      objectReference: {fileID: 935315487751486730, guid: 80749d17b3239e9449bfa1ac1cf7ec86, type: 3}
+    - target: {fileID: 4870158628302876601, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
+      propertyPath: _spawners.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870158628302876601, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
+      propertyPath: _spawners.Array.data[5].Id
+      value: Throw
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870158628302876601, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
+      propertyPath: _spawners.Array.data[5].Component
+      value: 
+      objectReference: {fileID: 685898395}
+    - target: {fileID: 4926214152286423768, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6057377996538258833, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2175,6 +2199,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb7643cd87af274ea3000803a04fd24, type: 3}
+--- !u!114 &685898395 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4423276187767836189, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
+  m_PrefabInstance: {fileID: 57562515}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eae3afc40c065b49bc85a86761c37c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &689122211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7102028105983095035, guid: 8aa3b8982a0b01741bc5a71e1ca09a88, type: 3}

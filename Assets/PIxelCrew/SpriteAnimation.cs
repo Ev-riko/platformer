@@ -33,14 +33,14 @@ namespace PixelCrew
 
         private void StartAnimation()
         {
-            _nextFrameTime = Time.time + _secondsPerFrame;
+            _nextFrameTime = Time.time;
             enabled = _isPlaing = true;
             _currentFrame = 0;
         }
 
         private void OnEnable()
         {
-            _nextFrameTime = Time.time + _secondsPerFrame;
+            _nextFrameTime = Time.time;
         }
 
         private void OnBecameVisible()

@@ -8,6 +8,7 @@ using UnityEditor.Animations;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 using System;
+using Cooldown = PixelCrew.Utils.Cooldown;
 
 namespace PixelCrew.Creatures
 {
@@ -17,7 +18,8 @@ namespace PixelCrew.Creatures
 
         [SerializeField] private CheckCircleOverlap _interactionCheck;
         [SerializeField] private LayerCheck _wallCheck;
-
+        [SerializeField] private Cooldown _throwCooldown;
+        
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _desarmed;
 
@@ -174,6 +176,7 @@ namespace PixelCrew.Creatures
         public void ArmHero()
         {
             _session.Data.IsArmed = true;
+            _session.Data.Swords++;
             UpdateHeroWeapon();           
         }
 
@@ -184,13 +187,18 @@ namespace PixelCrew.Creatures
 
         public void OnDoThrow()
         {
-
+            _particles.Spawn("Throw");
         }
 
         public void Throw()
         {
-            Debug.Log("Throw");
-            _animator.SetTrigger(ThrowKey);
+            if (_throwCooldown.IsReady && _session.Data.Swords > 1)
+            {
+                Debug.Log("Throw");
+                _animator.SetTrigger(ThrowKey);
+                _throwCooldown.Reset();
+                _session.Data.Swords--;
+            }
         }
     }
 }

@@ -17,9 +17,8 @@ namespace PixelCrew.Components.Model
         {
             if (_startData == null)
             {
-                _startData = new PlayerData(0, 5, false);
+                _startData = new PlayerData(0, 5, false, 0);
             }
-
 
             if (IsSessionExit())
             {
