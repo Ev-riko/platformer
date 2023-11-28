@@ -13,16 +13,17 @@ namespace PixelCrew.Components
         public void Spawn()
         {
             //Debug.Log("Spawn");
+            GameObject instance;
             if (_space == Space.World)
             {
-                var instantiate = Instantiate(_prefab, _target.position, Quaternion.identity);
-                instantiate.transform.localScale = _target.lossyScale;
+                instance = Instantiate(_prefab, _target.position, Quaternion.identity);
+                instance.transform.localScale = _target.lossyScale;
             }
             else
             {
-                Instantiate(_prefab, _target.position, Quaternion.identity, _target);
+                instance = Instantiate(_prefab, _target.position, Quaternion.identity, _target);
             }
-            
+            instance.SetActive(true);
         }
     }
 }

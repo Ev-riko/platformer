@@ -50,6 +50,9 @@ TagManager:
   - name: DecorBack
     uniqueID: 2102391335
     locked: 0
+  - name: TileMap
+    uniqueID: 2681901023
+    locked: 0
   - name: Lavel
     uniqueID: 471607717
     locked: 0

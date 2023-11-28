@@ -10,22 +10,18 @@ namespace PixelCrew.Components.Model
     public class GameSession : MonoBehaviour
     {
         [SerializeField] private PlayerData _data;
-        private PlayerData _startData;
+        private PlayerData _save;
         public PlayerData Data { get { return _data; } }
 
         private void Awake()
         {
-            if (_startData == null)
-            {
-                _startData = new PlayerData(0, 5, false, 0);
-            }
-
             if (IsSessionExit())
             {
                 DestroyImmediate(gameObject);
             }
             else
             {
+                Save();
                 DontDestroyOnLoad(gameObject);
             }
             
@@ -44,14 +40,13 @@ namespace PixelCrew.Components.Model
             return false;
         }
 
-        public void SetStartData()
-        {            
-            _startData.Copy(_data);
+        public void Save()
+        {
+            _save = _data.Clone();
         }
 
-        public void ReloadData()
-        {
-            _data.Copy(_startData);
+        public void LoadLastSave() {
+            _data = _save.Clone();
         }
     }
 }

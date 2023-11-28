@@ -18,7 +18,7 @@ public class MobAI : MonoBehaviour
 
     private static readonly int IsDeadKey = Animator.StringToHash("is-dead"); 
 
-    private Coroutine _current;
+    private IEnumerator _current;
     private GameObject _target;
 
     private SpawnListComponent _particles;
@@ -121,7 +121,8 @@ public class MobAI : MonoBehaviour
 
         if (_current != null)
             StopCoroutine(_current);
-        _current = StartCoroutine(coroutine);
+        _current = coroutine;
+        StartCoroutine(coroutine);
     }
 
     public void OnDie()

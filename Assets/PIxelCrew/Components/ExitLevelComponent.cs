@@ -10,7 +10,9 @@ namespace PixelCrew.Components
         [SerializeField] private SceneAsset scene;
         public void ExitLevel()
         {
-            FindObjectOfType<GameSession>().SetStartData();
+            var session = FindObjectOfType<GameSession>();
+            session.Save();
+
             SceneManager.LoadScene(scene.name);
         }       
     }

@@ -8,7 +8,9 @@ namespace PixelCrew.Components
     {
         public void Reload()
         {
-            FindObjectOfType<GameSession>().ReloadData();
+            var session = FindObjectOfType<GameSession>();
+            session.LoadLastSave();
+
             var scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
         }

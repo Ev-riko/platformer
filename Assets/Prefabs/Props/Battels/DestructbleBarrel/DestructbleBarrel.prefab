@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 1973372862011366004}
   - component: {fileID: 1973372862011366005}
   - component: {fileID: 4844128105631934521}
-  - component: {fileID: 1592167458}
   m_Layer: 6
   m_Name: DestructbleBarrel
   m_TagString: Enemy
@@ -219,7 +218,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1592167458}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: DropSpawnComponent, Assembly-CSharp
           m_MethodName: SpawnDrops
           m_Mode: 1
@@ -311,23 +310,3 @@ MonoBehaviour:
   _target: {fileID: 1973372862011366007}
   _prefab: {fileID: 2207278877387836699, guid: 6ab7b27cc61117540a7b57306210f3e9, type: 3}
   _space: 0
---- !u!114 &1592167458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973372862011366012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 265949a46c942904287578266b4e68df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _startImpulse: 3
-  _loot:
-  - _gameObject: {fileID: 9040604016703814317, guid: b04556f260524fa45902f07a7d29fcb3, type: 3}
-    _dropChance: 0.3
-    _maxQuantity: 2
-  - _gameObject: {fileID: 3678595529030200975, guid: 3744c454a60fde8468707a4ff48e9fd3, type: 3}
-    _dropChance: 0.7
-    _maxQuantity: 5
