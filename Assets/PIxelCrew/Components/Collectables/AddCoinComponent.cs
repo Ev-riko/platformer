@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PixelCrew.Components
 {
-    public class CountCoinComponent : MonoBehaviour
+    public class AddCoinComponent : MonoBehaviour
     {
         private Hero _hero;
         private Collider2D _collider;
