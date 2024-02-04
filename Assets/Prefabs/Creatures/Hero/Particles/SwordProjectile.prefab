@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: -1029502435
   m_SortingLayer: 6
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 44af15de4dfd0a14ca94f15ef69d75e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 31ce22a699064884a970252d4e2deb3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,10 +109,10 @@ MonoBehaviour:
   _clips:
   - _name: fly
     _sprites:
-    - {fileID: 21300000, guid: 36c5a376c1d15754eafcf197e7924d3a, type: 3}
-    - {fileID: 21300000, guid: 989093c475821644a9e35efbee3e3f3f, type: 3}
-    - {fileID: 21300000, guid: 22a9cdb1cf7845848a2c374c2f8f4986, type: 3}
-    - {fileID: 21300000, guid: 44af15de4dfd0a14ca94f15ef69d75e6, type: 3}
+    - {fileID: 21300000, guid: ad3e567b228fc3c46840ee56e0f6e277, type: 3}
+    - {fileID: 21300000, guid: a808e251bc287164c8e447ffc588ebfb, type: 3}
+    - {fileID: 21300000, guid: cb004cde0d7118d428390336f49388d7, type: 3}
+    - {fileID: 21300000, guid: 31ce22a699064884a970252d4e2deb3d, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:
@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 6
+  _invertX: 0
 --- !u!114 &6634385275512099362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +200,7 @@ MonoBehaviour:
   _tag: Enemy
   _layer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2624
   _action:
     m_PersistentCalls:
       m_Calls:

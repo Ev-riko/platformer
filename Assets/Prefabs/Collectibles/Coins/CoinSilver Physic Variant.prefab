@@ -97,9 +97,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 9142fc9c6ed998044b4a4c77482079b0, type: 2}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &-8963865781065554444
 MonoBehaviour:
@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 3678595529030200974}
   _prefab: {fileID: 3501563942128547755, guid: a5765871fefa0724c969676a96143087, type: 3}
+  _space: 0
 --- !u!114 &3678595529030200977 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2721401927668582447, guid: 0bb7643cd87af274ea3000803a04fd24, type: 3}

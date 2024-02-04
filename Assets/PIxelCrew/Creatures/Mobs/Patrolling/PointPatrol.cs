@@ -30,7 +30,7 @@ namespace Assets.PIxelCrew.Creatures
                 }
                 var direction = _points[_destinationPointIndex].position - transform.position;
                 direction.y = 0f;
-                Debug.Log(direction.normalized);
+                //Debug.Log(direction.normalized);
                 _creature.SetDirection(direction.normalized);
 
                 yield return null;
@@ -40,7 +40,7 @@ namespace Assets.PIxelCrew.Creatures
         private bool IsOnPoint()
         {
             var magnitude = (_points[_destinationPointIndex].position - transform.position).magnitude;
-            Debug.Log(magnitude);
+            //Debug.Log(magnitude);
             return magnitude < _treshold;
         }
     }

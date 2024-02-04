@@ -33,6 +33,7 @@ namespace PixelCrew.Creatures
         private float _defaultGravityScale;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
+        private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
 
         private GameSession _session;
 
@@ -67,8 +68,11 @@ namespace PixelCrew.Creatures
         protected override void Update()
         {
             base.Update();
-            if (_wallCheck.IsTouchingLayer && _direction.x == transform.localScale.x)
+
+            var moveToSameDirection = _direction.x * transform.localScale.x > 0;
+            if (_wallCheck.IsTouchingLayer && moveToSameDirection)
             {
+                
                 _isOnWall = true;
                 _rigitbody.gravityScale = 0;
             }
@@ -77,6 +81,8 @@ namespace PixelCrew.Creatures
                 _isOnWall = false;
                 _rigitbody.gravityScale = _defaultGravityScale;
             }
+
+            _animator.SetBool(IsOnWall, _isOnWall);
         }
 
 
@@ -100,7 +106,7 @@ namespace PixelCrew.Creatures
 
         protected override float CalculateJumpVelosity(float yVelocity)
         {
-            if (!_isGrounded && _allowDoubleJump)
+            if (!_isGrounded && _allowDoubleJump && !_isOnWall)
             {
                 _particles.Spawn("Jump");
                 _allowDoubleJump = false;

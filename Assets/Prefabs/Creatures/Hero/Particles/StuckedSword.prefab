@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -1613066273
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b7e990f46994ba444a62d79b9ea4afb7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df2f5e9a95b00b049855a81554213013, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,10 +106,10 @@ MonoBehaviour:
   _clips:
   - _name: idle
     _sprites:
-    - {fileID: 21300000, guid: 7830e00b11ca2b04081f0279d2602477, type: 3}
-    - {fileID: 21300000, guid: 8cdd4d6878df4f5429de4bb8183d5c8f, type: 3}
-    - {fileID: 21300000, guid: c26f7a1035f44ee47b7d57772160c21f, type: 3}
-    - {fileID: 21300000, guid: b7e990f46994ba444a62d79b9ea4afb7, type: 3}
+    - {fileID: 21300000, guid: df2f5e9a95b00b049855a81554213013, type: 3}
+    - {fileID: 21300000, guid: decbe8e35fd0de9498ab9fa15ae8a27a, type: 3}
+    - {fileID: 21300000, guid: a428e1f4f8b117b4a8f0d8fcf14285bc, type: 3}
+    - {fileID: 21300000, guid: 0cac6179ffb5a5a4e84971ff233b507a, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:

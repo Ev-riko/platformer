@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1143083053}
   - component: {fileID: 8314305142224991397}
   - component: {fileID: 598650471174706254}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PotionHeal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 471607717
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1798267741, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -173,6 +173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
   _action:
     m_PersistentCalls:
       m_Calls:
