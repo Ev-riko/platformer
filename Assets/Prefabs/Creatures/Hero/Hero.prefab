@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389652322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.626, y: 0, z: 0}
+  m_LocalPosition: {x: 0.626, y: -0.06, z: 0}
   m_LocalScale: {x: 1.63, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e394b2dc52329740858e1f13d2b984e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.4
+  _radius: 0.22
   _mask:
     serializedVersion: 2
-    m_Bits: 2039
+    m_Bits: 4087
   _tags:
   - Enemy
   _onOverlap:
@@ -363,9 +363,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.07337844}
   serializedVersion: 2
-  m_Radius: 0.30526423
+  m_Radius: 0.23188579
 --- !u!114 &821482722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 576
+    m_Bits: 2624
   _isTouchingLayer: 0
 --- !u!1 &908009146
 GameObject:
@@ -5371,7 +5371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2411904884768296711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.645, y: -0.15, z: 0}
+  m_LocalPosition: {x: 0.645, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5391,8 +5391,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 4926214152286423768}
-  _prefab: {fileID: 5461588960857981742, guid: 84932958130cc7144afb2c60d07d6160, type: 3}
-  _space: 1
+  _prefab: {fileID: 935315487751486730, guid: 80749d17b3239e9449bfa1ac1cf7ec86, type: 3}
+  _space: 0
 --- !u!1 &6057377996538258844
 GameObject:
   m_ObjectHideFlags: 0
@@ -5484,7 +5484,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1029502435
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 356cb2771eae9124ebe834e3deb4cec1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5536,7 +5536,7 @@ MonoBehaviour:
   _interactionCheck: {fileID: 519823282}
   _wallCheck: {fileID: 509610119}
   _throwCooldown:
-    _value: 0
+    _value: 2
   _armed: {fileID: 9100000, guid: f2edede420ddfd3488459d93f8df9bd6, type: 2}
   _desarmed: {fileID: 9100000, guid: 1253af38cdd93c54ab474f02743cf068, type: 2}
   _hitParticles: {fileID: 2015572252}
@@ -5697,7 +5697,7 @@ Animator:
   m_GameObject: {fileID: 6057377996538258844}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f2edede420ddfd3488459d93f8df9bd6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1253af38cdd93c54ab474f02743cf068, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5791,6 +5791,8 @@ MonoBehaviour:
     Component: {fileID: 1131027395}
   - Id: Potion
     Component: {fileID: 7931302640148743386}
+  - Id: Throw
+    Component: {fileID: 4423276187767836189}
 --- !u!1 &6057377996897685737
 GameObject:
   m_ObjectHideFlags: 0

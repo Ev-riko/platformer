@@ -11,7 +11,7 @@ namespace PixelCrew.Components.Model
     {
         [SerializeField] private PlayerData _data;
         private PlayerData _save;
-        public PlayerData Data { get { return _data; } }
+        public PlayerData Data => _data;
 
         private void Awake()
         {

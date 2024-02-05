@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5968505668073303598}
   - component: {fileID: 5968505668073303601}
   - component: {fileID: 5968505668073303603}
-  - component: {fileID: 5968505668073303602}
   - component: {fileID: 5968505668073303600}
   - component: {fileID: 5968505668073303597}
+  - component: {fileID: 882407811663804387}
   m_Layer: 10
   m_Name: CoinGold
   m_TagString: Untagged
@@ -118,18 +118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 5968505668073303605}
---- !u!114 &5968505668073303602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5968505668073303605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36cfa61c33a024f4792a740401584c79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5968505668073303600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,14 +137,27 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5968505668073303602}
-        m_TargetAssemblyTypeName: PixelCrew.Components.CountCoinComponent, Assembly-CSharp
-        m_MethodName: AddCoin
-        m_Mode: 3
+      - m_Target: {fileID: 882407811663804387}
+        m_TargetAssemblyTypeName: Assets.PIxelCrew.Components.Collectables.InventoryAddComponent,
+          Assembly-CSharp
+        m_MethodName: Add
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5968505668073303601}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -225,3 +226,17 @@ MonoBehaviour:
   _onComplete:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &882407811663804387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5968505668073303605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3127e7feb51218640bde0164eab928df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Coin
+  _value: 5

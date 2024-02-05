@@ -71,6 +71,15 @@ public partial class @HeroInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Heai"",
+                    ""type"": ""Button"",
+                    ""id"": ""9821743c-1529-4e2a-9766-3308ba0845f9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -172,6 +181,17 @@ public partial class @HeroInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Throw"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9b33ed07-da4e-4f57-91cb-93bfaed95f95"",
+                    ""path"": ""<Keyboard>/h"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Heai"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -185,6 +205,7 @@ public partial class @HeroInputActions : IInputActionCollection2, IDisposable
         m_Hero_Interact = m_Hero.FindAction("Interact", throwIfNotFound: true);
         m_Hero_Attack = m_Hero.FindAction("Attack", throwIfNotFound: true);
         m_Hero_Throw = m_Hero.FindAction("Throw", throwIfNotFound: true);
+        m_Hero_Heai = m_Hero.FindAction("Heai", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +270,7 @@ public partial class @HeroInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Hero_Interact;
     private readonly InputAction m_Hero_Attack;
     private readonly InputAction m_Hero_Throw;
+    private readonly InputAction m_Hero_Heai;
     public struct HeroActions
     {
         private @HeroInputActions m_Wrapper;
@@ -258,6 +280,7 @@ public partial class @HeroInputActions : IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Hero_Interact;
         public InputAction @Attack => m_Wrapper.m_Hero_Attack;
         public InputAction @Throw => m_Wrapper.m_Hero_Throw;
+        public InputAction @Heai => m_Wrapper.m_Hero_Heai;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -282,6 +305,9 @@ public partial class @HeroInputActions : IInputActionCollection2, IDisposable
                 @Throw.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnThrow;
                 @Throw.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnThrow;
                 @Throw.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnThrow;
+                @Heai.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnHeai;
+                @Heai.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnHeai;
+                @Heai.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnHeai;
             }
             m_Wrapper.m_HeroActionsCallbackInterface = instance;
             if (instance != null)
@@ -301,6 +327,9 @@ public partial class @HeroInputActions : IInputActionCollection2, IDisposable
                 @Throw.started += instance.OnThrow;
                 @Throw.performed += instance.OnThrow;
                 @Throw.canceled += instance.OnThrow;
+                @Heai.started += instance.OnHeai;
+                @Heai.performed += instance.OnHeai;
+                @Heai.canceled += instance.OnHeai;
             }
         }
     }
@@ -312,5 +341,6 @@ public partial class @HeroInputActions : IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
+        void OnHeai(InputAction.CallbackContext context);
     }
 }
