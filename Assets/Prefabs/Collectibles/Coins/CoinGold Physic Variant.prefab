@@ -74,15 +74,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5968505668073303600, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
---- !u!114 &9040604016703814314 stripped
+--- !u!114 &2565987488844981115 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5968505668073303602, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
+  m_CorrespondingSourceObject: {fileID: 882407811663804387, guid: 6be1110f5ee2a344aa98ef31923262f1, type: 3}
   m_PrefabInstance: {fileID: 3432527127221867672}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9040604016703814317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36cfa61c33a024f4792a740401584c79, type: 3}
+  m_Script: {fileID: 11500000, guid: 3127e7feb51218640bde0164eab928df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &9040604016703814315 stripped
@@ -138,10 +138,11 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9040604016703814314}
-        m_TargetAssemblyTypeName: PixelCrew.Components.CountCoinComponent, Assembly-CSharp
-        m_MethodName: AddCoin
-        m_Mode: 3
+      - m_Target: {fileID: 2565987488844981115}
+        m_TargetAssemblyTypeName: Assets.PIxelCrew.Components.Collectables.InventoryAddComponent,
+          Assembly-CSharp
+        m_MethodName: Add
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

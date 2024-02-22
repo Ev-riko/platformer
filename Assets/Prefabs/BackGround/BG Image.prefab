@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2115483595180207208}
   - component: {fileID: 1912788638110594794}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BG Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

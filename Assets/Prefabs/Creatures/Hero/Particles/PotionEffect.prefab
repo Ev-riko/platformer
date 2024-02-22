@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7560579392163308769}
   - component: {fileID: 5848809021361964954}
   - component: {fileID: -1038829620470682921}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: PotionEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1029502435
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: 25473310, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

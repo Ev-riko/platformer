@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8437689903049945704}
   - component: {fileID: 8437689903049945702}
   - component: {fileID: 8437689903049945703}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CM vcam1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 8437689903615444049}
   - component: {fileID: 8437689903615444048}
   - component: {fileID: 8437689903615444398}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

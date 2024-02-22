@@ -10,6 +10,8 @@ using static UnityEngine.ParticleSystem;
 using System;
 using Cooldown = PixelCrew.Utils.Cooldown;
 using Assets.PIxelCrew.Model;
+using System.Collections;
+using PIxelCrew;
 
 namespace PixelCrew.Creatures
 {
@@ -18,15 +20,23 @@ namespace PixelCrew.Creatures
         [SerializeField] private float _slamDownVelocity;
 
         [SerializeField] private CheckCircleOverlap _interactionCheck;
-        [SerializeField] private LayerCheck _wallCheck;
+        [SerializeField] private ColliderCheck _wallCheck;
         [SerializeField] private Cooldown _throwCooldown;
+        [SerializeField] private ProbabilityDropComponent _hitDrop;
 
+        [Space]
+        [Header("Animation")]
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _desarmed;
 
+
         [Space]
-        [Header("Particles")]
-        [SerializeField] private ParticleSystem _hitParticles;
+        [Header("Super throw")]
+        [SerializeField] private Cooldown _superThrowCooldawn;
+        [SerializeField] private int _superThrowParticles;
+        [SerializeField] private float _superThrowDelay;
+
+        
 
         private int CoinsCount => _session.Data.inventory.Count("Coin");
         private int SwordCount => _session.Data.inventory.Count("Sword");
@@ -35,6 +45,8 @@ namespace PixelCrew.Creatures
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
+        private bool _superThrow;
+
         private float _defaultGravityScale;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
@@ -42,16 +54,11 @@ namespace PixelCrew.Creatures
 
         private GameSession _session;
         private HealthComponent _health;
-
+        
         protected override void Awake()
         {
             base.Awake();
             _defaultGravityScale = _rigitbody.gravityScale;
-        }
-
-        private void OnEnable()
-        {
-            _hitParticles.GameObject().SetActive(false);
         }
 
         private void Start()
@@ -144,7 +151,7 @@ namespace PixelCrew.Creatures
             _particles.Spawn("Potion");
         }
 
-        
+
 
         public override void TakeDamage()
         {
@@ -152,21 +159,19 @@ namespace PixelCrew.Creatures
 
             //Debug.Log($"_coins: {CoinsCount}");
             if (CoinsCount > 0)
-                SpawnCoinsParticles();
+                SpawnCoins();
         }
 
-        private void SpawnCoinsParticles()
+        private void SpawnCoins()
         {
-            Debug.Log("SpawnCoinsParticles");
+            Debug.Log("SpawnCoins");
             var numCoinsDispose = Mathf.Min(CoinsCount, 5);
             _session.Data.inventory.Remove("Coin", numCoinsDispose);
 
-            var burst = _hitParticles.emission.GetBurst(0);
-            burst.count = numCoinsDispose;
-            _hitParticles.emission.SetBurst(0, burst);
 
-            _hitParticles.gameObject.SetActive(true);
-            _hitParticles.Play();
+            _hitDrop.SetCount(numCoinsDispose);
+            _hitDrop.CalculateDrop();
+            
         }
 
         public void Interact()
@@ -208,7 +213,30 @@ namespace PixelCrew.Creatures
 
         public void OnDoThrow()
         {
+            if (_superThrow) 
+            {
+                var numThrows = Mathf.Min(_superThrowParticles, SwordCount - 1);
+                StartCoroutine(DoSuperThrow(numThrows));
+            }
+            else
+            {
+                ThrowAndRemoveFromInventory();
+            }
+        }
+
+        private IEnumerator DoSuperThrow(int numThrows)
+        {
+            for (int i = 0; i < numThrows; i++)
+            {
+                ThrowAndRemoveFromInventory();
+                yield return new WaitForSeconds(_superThrowDelay);
+            }
+        }
+
+        private void ThrowAndRemoveFromInventory()
+        {
             _particles.Spawn("Throw");
+            _session.Data.inventory.Remove("Sword", 1);
         }
 
         public void Throw()
@@ -218,7 +246,6 @@ namespace PixelCrew.Creatures
                 Debug.Log("Throw");
                 _animator.SetTrigger(ThrowKey);
                 _throwCooldown.Reset();
-                _session.Data.inventory.Remove("Sword", 1);
             }
         }
 
@@ -230,6 +257,24 @@ namespace PixelCrew.Creatures
                 _health.ModifyHealth(5);
                 PlayPotionEffect();
             }
+        }
+
+        public void StartThrowing()
+        {
+            _superThrowCooldawn.Reset();
+        }
+
+        public void PerformThrowing()
+        {
+            if (!_throwCooldown.IsReady || SwordCount <= 1) return;
+
+            if (_superThrowCooldawn.IsReady)
+            {
+                _superThrow = true;
+            }
+
+            _animator.SetTrigger(ThrowKey);
+            _throwCooldown.Reset();
         }
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9004504070692748248}
   - component: {fileID: 1797691654759733565}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Additional Sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}

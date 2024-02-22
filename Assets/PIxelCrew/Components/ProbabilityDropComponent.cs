@@ -49,6 +49,11 @@ public class ProbabilityDropComponent : MonoBehaviour
         _onDropCalculated?.Invoke(itemsToDrop);
     }
 
+    public void SetCount(int count)
+    {
+        _count = count;
+    }
+
     [Serializable]
     private class DropData
     {

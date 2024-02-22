@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6597759394660772993}
   - component: {fileID: 6597759394660772994}
   - component: {fileID: 6597759394660772995}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 6597759396273185575}
   - component: {fileID: 6597759396273185572}
   - component: {fileID: 6597759396273185573}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}

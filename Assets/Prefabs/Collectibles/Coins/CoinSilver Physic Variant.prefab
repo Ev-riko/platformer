@@ -117,10 +117,11 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3678595529030200981}
-        m_TargetAssemblyTypeName: PixelCrew.Components.CountCoinComponent, Assembly-CSharp
-        m_MethodName: AddCoin
-        m_Mode: 3
+      - m_Target: {fileID: 4368973671765478044}
+        m_TargetAssemblyTypeName: Assets.PIxelCrew.Components.Collectables.InventoryAddComponent,
+          Assembly-CSharp
+        m_MethodName: Add
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -179,14 +180,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a887cffff050ad409fbcd365c16c88c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3678595529030200981 stripped
+--- !u!114 &4368973671765478044 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2721401927668582443, guid: 0bb7643cd87af274ea3000803a04fd24, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3055997936963759138, guid: 0bb7643cd87af274ea3000803a04fd24, type: 3}
   m_PrefabInstance: {fileID: 1641741863076538046}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3678595529030200975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36cfa61c33a024f4792a740401584c79, type: 3}
+  m_Script: {fileID: 11500000, guid: 3127e7feb51218640bde0164eab928df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

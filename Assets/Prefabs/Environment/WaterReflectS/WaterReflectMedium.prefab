@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6071086655981007116}
   - component: {fileID: 39608805956508411}
   - component: {fileID: 7729726768497709961}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WaterReflectMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}

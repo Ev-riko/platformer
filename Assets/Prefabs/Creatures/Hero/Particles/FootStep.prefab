@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3809715040251939160}
   - component: {fileID: 4393407034573295723}
   - component: {fileID: 2015681539715400740}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FootStep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 471607717
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6d9cb90d28e8eff4c86cf4eb0efe8de0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

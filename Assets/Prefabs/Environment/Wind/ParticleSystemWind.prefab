@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1948487370594977707}
   - component: {fileID: 1948487370594977704}
   - component: {fileID: 1948487370594977705}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ParticleSystemWind
   m_TagString: Untagged
   m_Icon: {fileID: 0}

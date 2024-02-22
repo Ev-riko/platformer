@@ -14,7 +14,7 @@ namespace PixelCrew.Components
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log($"{gameObject.name} trig with {other.name}");
+            //Debug.Log($"{gameObject.name} trig with {other.name}");
             if (!other.gameObject.IsInLayer(_layer)) return;
             if (!String.IsNullOrEmpty(_tag) && !other.gameObject.CompareTag(_tag)) return;
 
