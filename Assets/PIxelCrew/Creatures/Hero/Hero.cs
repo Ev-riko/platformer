@@ -58,7 +58,7 @@ namespace PixelCrew.Creatures
         protected override void Awake()
         {
             base.Awake();
-            _defaultGravityScale = _rigitbody.gravityScale;
+            _defaultGravityScale = Rigitbody.gravityScale;
         }
 
         private void Start()
@@ -90,29 +90,29 @@ namespace PixelCrew.Creatures
         {
             base.Update();
 
-            var moveToSameDirection = _direction.x * transform.localScale.x > 0;
+            var moveToSameDirection = Direction.x * transform.localScale.x > 0;
             if (_wallCheck.IsTouchingLayer && moveToSameDirection)
             {
 
                 _isOnWall = true;
-                _rigitbody.gravityScale = 0;
+                Rigitbody.gravityScale = 0;
             }
             else
             {
                 _isOnWall = false;
-                _rigitbody.gravityScale = _defaultGravityScale;
+                Rigitbody.gravityScale = _defaultGravityScale;
             }
 
-            _animator.SetBool(IsOnWall, _isOnWall);
+            Animator.SetBool(IsOnWall, _isOnWall);
         }
 
 
 
         protected override float CalculateYVelosity()
         {
-            var isJumpPressing = _direction.y > 0;
+            var isJumpPressing = Direction.y > 0;
 
-            if (_isGrounded || _isOnWall)
+            if (IsGrounded || _isOnWall)
             {
                 _allowDoubleJump = true;
             }
@@ -127,10 +127,10 @@ namespace PixelCrew.Creatures
 
         protected override float CalculateJumpVelosity(float yVelocity)
         {
-            if (!_isGrounded && _allowDoubleJump && !_isOnWall)
+            if (!IsGrounded && _allowDoubleJump && !_isOnWall)
             {
-                _particles.Spawn("Jump");
                 _allowDoubleJump = false;
+                DoJumpVfx();
                 return _jumpSpeed;
             }
             return base.CalculateJumpVelosity(yVelocity);
@@ -208,7 +208,7 @@ namespace PixelCrew.Creatures
 
         public void UpdateHeroWeapon()
         {
-            _animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _desarmed;
+            Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _desarmed;
         }
 
         public void OnDoThrow()
@@ -235,6 +235,7 @@ namespace PixelCrew.Creatures
 
         private void ThrowAndRemoveFromInventory()
         {
+            Sounds.PlayClip("Range");
             _particles.Spawn("Throw");
             _session.Data.inventory.Remove("Sword", 1);
         }
@@ -244,7 +245,7 @@ namespace PixelCrew.Creatures
             if (_throwCooldown.IsReady && SwordCount > 1)
             {
                 Debug.Log("Throw");
-                _animator.SetTrigger(ThrowKey);
+                Animator.SetTrigger(ThrowKey);
                 _throwCooldown.Reset();
             }
         }
@@ -273,7 +274,7 @@ namespace PixelCrew.Creatures
                 _superThrow = true;
             }
 
-            _animator.SetTrigger(ThrowKey);
+            Animator.SetTrigger(ThrowKey);
             _throwCooldown.Reset();
         }
     }

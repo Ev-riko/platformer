@@ -18,10 +18,11 @@ namespace PixelCrew.Creatures
         [SerializeField] private CheckCircleOverlap _attackRange;
         [SerializeField] protected SpawnListComponent _particles;
         
-        protected Vector2 _direction;
-        protected Rigidbody2D _rigitbody;
-        protected Animator _animator;
-        protected bool _isGrounded;
+        protected Vector2 Direction;
+        protected Rigidbody2D Rigitbody;
+        protected Animator Animator;
+        protected PlaySoundsComponent Sounds;
+        protected bool IsGrounded;
         private bool _isJumping;
 
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
@@ -32,39 +33,40 @@ namespace PixelCrew.Creatures
 
         protected virtual void Awake()
         {
-            _rigitbody = GetComponent<Rigidbody2D>();
-            _animator = GetComponent<Animator>();
+            Rigitbody = GetComponent<Rigidbody2D>();
+            Animator = GetComponent<Animator>();
+            Sounds = GetComponent<PlaySoundsComponent>();
         }
 
         public void SetDirection(Vector2 direction)
         {
-            _direction = direction;
+            Direction = direction;
         }
 
         protected virtual void Update()
         {
-            _isGrounded = _groundCheck.IsTouchingLayer;
+            IsGrounded = _groundCheck.IsTouchingLayer;
         }
 
         private void FixedUpdate()
         {
-            var xVelocity = _direction.x * _speed;
+            var xVelocity = Direction.x * _speed;
             var yVelocity = CalculateYVelosity();
-            _rigitbody.velocity = new Vector2(xVelocity, yVelocity);
+            Rigitbody.velocity = new Vector2(xVelocity, yVelocity);
 
-            _animator.SetFloat(VerticalVelocityKey, _rigitbody.velocity.y);
-            _animator.SetBool(IsRunningKey, _direction.x != 0);
-            _animator.SetBool(IsGroundKey, _isGrounded);
+            Animator.SetFloat(VerticalVelocityKey, Rigitbody.velocity.y);
+            Animator.SetBool(IsRunningKey, Direction.x != 0);
+            Animator.SetBool(IsGroundKey, IsGrounded);
 
-            UpdateSpriteDirection(_direction);
+            UpdateSpriteDirection(Direction);
         }
 
         protected virtual float CalculateYVelosity()
         {
-            var yVelocity = _rigitbody.velocity.y;
-            var isJumpPressing = _direction.y > 0;
+            var yVelocity = Rigitbody.velocity.y;
+            var isJumpPressing = Direction.y > 0;
 
-            if (_isGrounded)
+            if (IsGrounded)
             {
                 _isJumping = false;
             }            
@@ -72,10 +74,10 @@ namespace PixelCrew.Creatures
             if (isJumpPressing)
             {
                 _isJumping = true;
-                var isFalling = _rigitbody.velocity.y <= 0.001f;
+                var isFalling = Rigitbody.velocity.y <= 0.001f;
                 yVelocity = isFalling ? CalculateJumpVelosity(yVelocity) : yVelocity;
             }
-            else if (_rigitbody.velocity.y > 0 && _isJumping)
+            else if (Rigitbody.velocity.y > 0 && _isJumping)
             {
                 yVelocity *= 0.5f;
             }
@@ -84,14 +86,20 @@ namespace PixelCrew.Creatures
 
         protected virtual float CalculateJumpVelosity(float yVelocity)
         {
-            if (_isGrounded)
+            if (IsGrounded)
             {
                 yVelocity += _jumpSpeed;
                 Debug.Log("Jump");
-                _particles.Spawn("Jump");
+                DoJumpVfx();
             }
             
             return yVelocity;
+        }
+
+        protected void DoJumpVfx()
+        {
+            _particles.Spawn("Jump");
+            Sounds.PlayClip("Jump");
         }
 
         public void UpdateSpriteDirection(Vector2 direction)
@@ -110,13 +118,14 @@ namespace PixelCrew.Creatures
         public virtual void TakeDamage()
         {
             _isJumping = false;
-            _animator.SetTrigger(Hit);
-            _rigitbody.velocity = new Vector2(_rigitbody.velocity.x, _damageJumpSpd);            
+            Animator.SetTrigger(Hit);
+            Rigitbody.velocity = new Vector2(Rigitbody.velocity.x, _damageJumpSpd);            
         }
 
         public virtual void Attack()
         {
-            _animator.SetTrigger(AttackKey);
+            Animator.SetTrigger(AttackKey);
+            Sounds.PlayClip("Melee");
         }
 
         public virtual void MakeAttack()
