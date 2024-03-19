@@ -24,6 +24,17 @@ public class Totem : MonoBehaviour
         scale.x *= _invertX ? -1 : 1;
         transform.localScale = scale;
 
+        UpdateTopTotemAnimatoController();
+    }
+
+    public void SetTopTotemState(bool state)
+    {
+        _topTotemState = state;
+        UpdateTopTotemAnimatoController();
+    }
+
+    private void UpdateTopTotemAnimatoController()
+    {
         _animator.runtimeAnimatorController = _topTotemState ? _top : _bottom;
     }
 }

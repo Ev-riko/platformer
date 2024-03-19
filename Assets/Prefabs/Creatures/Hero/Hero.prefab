@@ -1249,6 +1249,18 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1753636240}
+        m_TargetAssemblyTypeName: PlaySoundsComponent, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Die
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4412248388765114148, guid: 84e9f71647b35f64a9a5dfd48ad8eeac, type: 3}
         m_TargetAssemblyTypeName: PixelCrew.Components.ReloadLevelComponent, Assembly-CSharp
         m_MethodName: Reload
@@ -1326,6 +1338,8 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: d33e281484585b04b9342257c7eeb002, type: 3}
   - _id: Hurt
     _clip: {fileID: 8300000, guid: 7eef3d1f7c3a7394cbbbbd0e8960c5c0, type: 3}
+  - _id: Die
+    _clip: {fileID: 8300000, guid: 0be4a8eee5f7d7b459e570d6e691533b, type: 3}
 --- !u!1 &6057377996897685737
 GameObject:
   m_ObjectHideFlags: 0
