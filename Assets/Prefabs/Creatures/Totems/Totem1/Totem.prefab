@@ -168,14 +168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe56bf8b1c4a8840b130af593e4d462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vision: {fileID: 412235331013129976}
-  _meleeCooldown:
-    _value: 0
-  _meleeAttack: {fileID: 0}
-  _meleeCanAttack: {fileID: 0}
   _rangeCooldown:
     _value: 2
   _rangeAttack: {fileID: 2477612513828503088}
+  _vision: {fileID: 412235331013129976}
 --- !u!114 &1914972853342539251
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.PIxelCrew.Model.Definitions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,11 @@ namespace Assets.PIxelCrew.Model
     public class DefsFacade : ScriptableObject
     {
         [SerializeField] private InventoryItemsDef _items;
+        [SerializeField] private PlayerDef _player;
 
         public InventoryItemsDef Items => _items;
+
+        public PlayerDef Player => _player;
 
         private static DefsFacade _instance;
         public static DefsFacade I => _instance == null ? LoadDefs() : _instance;

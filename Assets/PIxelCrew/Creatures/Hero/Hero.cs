@@ -240,18 +240,9 @@ namespace PixelCrew.Creatures
             _session.Data.inventory.Remove("Sword", 1);
         }
 
-        public void Throw()
-        {
-            if (_throwCooldown.IsReady && SwordCount > 1)
-            {
-                Debug.Log("Throw");
-                Animator.SetTrigger(ThrowKey);
-                _throwCooldown.Reset();
-            }
-        }
-
         public void Heal()
         {
+            //Debug.Log("Hero.Heal");
             if (PotionHealthCount > 0)
             {
                 _session.Data.inventory.Remove("PotionHealth", 1);

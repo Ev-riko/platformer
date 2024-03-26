@@ -185,7 +185,7 @@ public partial class @HeroInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9b33ed07-da4e-4f57-91cb-93bfaed95f95"",
-                    ""path"": ""<Keyboard>/h"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

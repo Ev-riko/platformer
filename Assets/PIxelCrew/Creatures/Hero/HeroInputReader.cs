@@ -48,8 +48,9 @@ namespace PixelCrew
         public void OnHeal(InputAction.CallbackContext context)
         {
             if (context.started)
-                _hero.Throw();
+            {
+                _hero.Heal();
+            }
         }
-
     }
 }
