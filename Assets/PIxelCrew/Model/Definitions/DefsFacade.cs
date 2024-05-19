@@ -1,12 +1,6 @@
-﻿using Assets.PIxelCrew.Model.Definitions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.PIxelCrew.Model
+namespace PixelCrew.Model.Definitions
 {
     [CreateAssetMenu(menuName = "Defs/DefsFacade", fileName = "DefsFacade")]
     public class DefsFacade : ScriptableObject

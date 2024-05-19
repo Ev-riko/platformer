@@ -1,16 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CustomButton : Button
+namespace PixelCrew.Components.UI.Widgets
 {
-    [SerializeField] private GameObject _normal;
-    [SerializeField] private GameObject _pressed;
-
-    protected override void DoStateTransition(SelectionState state, bool instant)
+    public class CustomButton : Button
     {
-        base.DoStateTransition(state, instant);
+        [SerializeField] private GameObject _normal;
+        [SerializeField] private GameObject _pressed;
 
-        _normal.SetActive(state != SelectionState.Pressed);
-        _pressed.SetActive(state == SelectionState.Pressed);
+        protected override void DoStateTransition(SelectionState state, bool instant)
+        {
+            base.DoStateTransition(state, instant);
+
+            _normal.SetActive(state != SelectionState.Pressed);
+            _pressed.SetActive(state == SelectionState.Pressed);
+        }
     }
 }

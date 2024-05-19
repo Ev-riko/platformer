@@ -3,27 +3,31 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TimerComponent : MonoBehaviour
+namespace PixelCrew.Components
 {
-    [SerializeField] private TimerData[] _timers;
-
-    public void SetTimer(int index)
+    public class TimerComponent : MonoBehaviour
     {
-        var timer = _timers[index];
+        [SerializeField] private TimerData[] _timers;
 
-        StartCoroutine(StartTimer(timer));
-    }
+        public void SetTimer(int index)
+        {
+            var timer = _timers[index];
 
-    private IEnumerator StartTimer(TimerData timer)
-    {
-        yield return new WaitForSeconds(timer.Delay);
+            StartCoroutine(StartTimer(timer));
+        }
 
-        timer.OnTimesUp?.Invoke();
-    }
+        private IEnumerator StartTimer(TimerData timer)
+        {
+            yield return new WaitForSeconds(timer.Delay);
 
-    [Serializable]
-    public class TimerData {
-        public float Delay;
-        public UnityEvent OnTimesUp;
+            timer.OnTimesUp?.Invoke();
+        }
+
+        [Serializable]
+        public class TimerData
+        {
+            public float Delay;
+            public UnityEvent OnTimesUp;
+        }
     }
 }

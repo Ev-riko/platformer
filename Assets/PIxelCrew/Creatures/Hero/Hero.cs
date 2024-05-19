@@ -1,19 +1,15 @@
 
-using PixelCrew.Components.Model;
 using PixelCrew.Components;
 using PixelCrew.Utils;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
-using System;
 using Cooldown = PixelCrew.Utils.Cooldown;
-using Assets.PIxelCrew.Model;
 using System.Collections;
-using PIxelCrew;
+using PixelCrew.Components.ColliderBased;
+using PixelCrew.Model;
+using PixelCrew.Components.Health;
 
-namespace PixelCrew.Creatures
+namespace PixelCrew.Creatures.Hero
 {
     public class Hero : Creature
     {

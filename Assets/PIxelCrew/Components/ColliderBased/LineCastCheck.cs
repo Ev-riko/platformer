@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
-namespace Assets.PIxelCrew.Components.ColliderBased
+namespace PixelCrew.Components.ColliderBased
 {
     public class LineCastCheck : LayerCheck
     {

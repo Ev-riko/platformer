@@ -3,30 +3,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaySoundsComponent : MonoBehaviour
+namespace PixelCrew.Components.Audio
 {
-    [SerializeField] private AudioSource _source;
-    [SerializeField] private AudioData[] _sounds;
-
-    public void PlayClip(string id)
+    public class PlaySoundsComponent : MonoBehaviour
     {
-        foreach (var audioData in _sounds)
+        [SerializeField] private AudioSource _source;
+        [SerializeField] private AudioData[] _sounds;
+
+        public void PlayClip(string id)
         {
-            if (audioData.Id != id) continue;
+            foreach (var audioData in _sounds)
+            {
+                if (audioData.Id != id) continue;
 
-            _source.PlayOneShot(audioData.Clip);
-            break;
+                _source.PlayOneShot(audioData.Clip);
+                break;
+            }
         }
-    }
 
 
-    [Serializable]
-    public class AudioData
-    {
-        [SerializeField] private string _id;
-        [SerializeField] private AudioClip _clip;
+        [Serializable]
+        public class AudioData
+        {
+            [SerializeField] private string _id;
+            [SerializeField] private AudioClip _clip;
 
-        public string Id => _id;
-        public AudioClip Clip => _clip;
+            public string Id => _id;
+            public AudioClip Clip => _clip;
+        }
     }
 }

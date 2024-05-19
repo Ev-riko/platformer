@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.Health
 {
     public class ModifyHealthComponent : MonoBehaviour
     {

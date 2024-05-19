@@ -1,11 +1,10 @@
-﻿using PixelCrew.Components;
+﻿using PixelCrew.Components.Health;
 using PixelCrew.Utils;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Assets.PIxelCrew.Creatures.Mobs
+namespace PixelCrew.Creatures.Mobs
 {
     public class TotemTower : MonoBehaviour
     {

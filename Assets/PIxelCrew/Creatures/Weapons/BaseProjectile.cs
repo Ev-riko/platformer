@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.PIxelCrew.Creatures.Weapons
+namespace PixelCrew.Creatures.Weapons
 {
     public class BaseProjectile : MonoBehaviour
     {

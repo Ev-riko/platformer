@@ -1,4 +1,4 @@
-﻿using PixelCrew.Creatures;
+﻿using PixelCrew.Creatures.Hero;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;

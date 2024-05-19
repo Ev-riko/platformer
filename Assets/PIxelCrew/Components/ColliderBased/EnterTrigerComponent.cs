@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.ColliderBased
 {
     public class EnterTrigerComponent : MonoBehaviour
     {

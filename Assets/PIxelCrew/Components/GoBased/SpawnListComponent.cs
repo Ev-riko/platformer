@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.GoBased
 {
     public class SpawnListComponent : MonoBehaviour
     {

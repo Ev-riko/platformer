@@ -1,7 +1,7 @@
 ﻿using Cinemachine;
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.CutScenes
 {
     public class CameraStateController : MonoBehaviour
     {

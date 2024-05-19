@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.PIxelCrew.Model.Definitions
+namespace PixelCrew.Model.Definitions
 {
     public class InventoryIdAttribute : PropertyAttribute
     {

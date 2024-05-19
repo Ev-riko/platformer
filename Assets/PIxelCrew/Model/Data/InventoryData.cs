@@ -1,13 +1,9 @@
-﻿using Assets.PIxelCrew.Model.Definitions;
+﻿using PixelCrew.Model.Definitions;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Networking.Types;
 
-namespace Assets.PIxelCrew.Model
+namespace PixelCrew.Model.Data
 {
     [Serializable]
     public class InventoryData

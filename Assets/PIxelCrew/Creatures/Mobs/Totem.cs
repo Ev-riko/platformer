@@ -1,40 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 
-
-[RequireComponent(typeof(Animator))]
-public class Totem : MonoBehaviour
+namespace PixelCrew.Creatures.Mobs
 {
-    [SerializeField] private bool _topTotemState;
-    [SerializeField] private bool _invertX;
-
-    [SerializeField] private AnimatorController _top;
-    [SerializeField] private AnimatorController _bottom;
-
-    private Animator _animator;   
-
-    private void Awake()
+    [RequireComponent(typeof(Animator))]
+    public class Totem : MonoBehaviour
     {
-        if (_animator == null)
-            _animator = GetComponent<Animator>();
+        [SerializeField] private bool _topTotemState;
+        [SerializeField] private bool _invertX;
 
-        var scale = transform.localScale;
-        scale.x *= _invertX ? -1 : 1;
-        transform.localScale = scale;
+        [SerializeField] private AnimatorController _top;
+        [SerializeField] private AnimatorController _bottom;
 
-        UpdateTopTotemAnimatoController();
-    }
+        private Animator _animator;
 
-    public void SetTopTotemState(bool state)
-    {
-        _topTotemState = state;
-        UpdateTopTotemAnimatoController();
-    }
+        private void Awake()
+        {
+            if (_animator == null)
+                _animator = GetComponent<Animator>();
 
-    private void UpdateTopTotemAnimatoController()
-    {
-        _animator.runtimeAnimatorController = _topTotemState ? _top : _bottom;
+            var scale = transform.localScale;
+            scale.x *= _invertX ? -1 : 1;
+            transform.localScale = scale;
+
+            UpdateTopTotemAnimatoController();
+        }
+
+        public void SetTopTotemState(bool state)
+        {
+            _topTotemState = state;
+            UpdateTopTotemAnimatoController();
+        }
+
+        private void UpdateTopTotemAnimatoController()
+        {
+            _animator.runtimeAnimatorController = _topTotemState ? _top : _bottom;
+        }
     }
 }

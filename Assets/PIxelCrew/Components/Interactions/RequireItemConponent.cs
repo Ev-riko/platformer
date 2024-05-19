@@ -1,9 +1,9 @@
-﻿using Assets.PIxelCrew.Model;
-using PixelCrew.Components.Model;
+﻿using PixelCrew.Model;
+using PixelCrew.Model.Data;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.PIxelCrew.Components.Interactions
+namespace PixelCrew.Components.Interactions
 {
     public class RequireItemConponent : MonoBehaviour
     {

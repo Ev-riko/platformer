@@ -1,4 +1,6 @@
-﻿using PixelCrew.Components;
+﻿using PixelCrew.Components.Audio;
+using PixelCrew.Components.ColliderBased;
+using PixelCrew.Components.GoBased;
 using UnityEngine;
 
 namespace PixelCrew.Creatures

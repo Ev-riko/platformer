@@ -1,7 +1,6 @@
-using System.Xml;
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.GoBased
 {
     public class SpawnComponent : MonoBehaviour
     {

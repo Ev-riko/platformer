@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.PIxelCrew.Creatures.Weapons
+namespace PixelCrew.Creatures.Weapons
 {
     public class SinusoidalProjectile : BaseProjectile
     {

@@ -1,7 +1,7 @@
-﻿using PixelCrew.Creatures;
+﻿using PixelCrew.Creatures.Hero;
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.Collectables
 {
     public class PotionComponent : MonoBehaviour
     {

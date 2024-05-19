@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.PIxelCrew.Creatures
+namespace PixelCrew.Creatures.Mobs.Patrolling
 {
     public abstract class Patrol : MonoBehaviour
     {

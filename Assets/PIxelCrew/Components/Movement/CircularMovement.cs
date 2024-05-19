@@ -1,80 +1,79 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
-public class CircularMovement : MonoBehaviour
+namespace PixelCrew.Components.Movement
 {
-    [SerializeField] private float _radius = 1f;
-    [SerializeField] private float _speed = 1f;
-    private Rigidbody2D[] _bodies;
-    private Vector2[] _positions;
-    private float _time;
-
-    private void Awake()
+    public class CircularMovement : MonoBehaviour
     {
-        UpdateContent();
-    }
+        [SerializeField] private float _radius = 1f;
+        [SerializeField] private float _speed = 1f;
+        private Rigidbody2D[] _bodies;
+        private Vector2[] _positions;
+        private float _time;
 
-    private void UpdateContent()
-    {
-        _bodies = GetComponentsInChildren<Rigidbody2D>();
-        _positions = new Vector2[_bodies.Length];
-    }
-
-    void Update()
-    {
-        CalculatePositions();
-
-        var isAllDead = true;
-        for (int i = 0; i < _bodies.Length; i++)
+        private void Awake()
         {
-            if (_bodies[i])
+            UpdateContent();
+        }
+
+        private void UpdateContent()
+        {
+            _bodies = GetComponentsInChildren<Rigidbody2D>();
+            _positions = new Vector2[_bodies.Length];
+        }
+
+        void Update()
+        {
+            CalculatePositions();
+
+            var isAllDead = true;
+            for (int i = 0; i < _bodies.Length; i++)
             {
-                _bodies[i].MovePosition(_positions[i]);
-                isAllDead = false;
+                if (_bodies[i])
+                {
+                    _bodies[i].MovePosition(_positions[i]);
+                    isAllDead = false;
+                }
+            }
+            _time += Time.deltaTime;
+
+            if (isAllDead)
+            {
+                enabled = false;
+                Destroy(gameObject, 1f);
             }
         }
-        _time += Time.deltaTime;
 
-        if (isAllDead)
+        private void CalculatePositions()
         {
-            enabled = false;
-            Destroy(gameObject, 1f);
-        }
-    }
+            var step = 2 * Mathf.PI / _bodies.Length;
 
-    private void CalculatePositions()
-    {
-        var step = 2 * Mathf.PI / _bodies.Length;
-
-        Vector2 containerPosition = transform.position;
-        for (int i = 0; i < _bodies.Length; i++)
-        {
-            var angle = step * i;
-            var pos = new Vector2(
-                Mathf.Cos(angle + _time * _speed),
-                Mathf.Sin(angle + _time * _speed)
-                ) * _radius;
-            _positions[i] = pos + containerPosition;
+            Vector2 containerPosition = transform.position;
+            for (int i = 0; i < _bodies.Length; i++)
+            {
+                var angle = step * i;
+                var pos = new Vector2(
+                    Mathf.Cos(angle + _time * _speed),
+                    Mathf.Sin(angle + _time * _speed)
+                    ) * _radius;
+                _positions[i] = pos + containerPosition;
+            }
         }
-    }
 
 #if UNITY_EDITOR
-    private void OnValidate()
-    {
-        UpdateContent();
-        CalculatePositions();
-        for (int i = 0; i < _bodies.Length; i++)
+        private void OnValidate()
         {
-            _bodies[i].transform.position = _positions[i];
+            UpdateContent();
+            CalculatePositions();
+            for (int i = 0; i < _bodies.Length; i++)
+            {
+                _bodies[i].transform.position = _positions[i];
+            }
         }
-    }
 
-    private void OnDrawGizmosSelected()
-    {
-        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, _radius);
-    }
+        private void OnDrawGizmosSelected()
+        {
+            UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, _radius);
+        }
 #endif
+    }
 }

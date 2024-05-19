@@ -1,13 +1,8 @@
-﻿using PixelCrew;
+﻿using PixelCrew.Components.ColliderBased;
 using PixelCrew.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.PIxelCrew.Creatures.Mobs
+namespace PixelCrew.Creatures.Mobs
 {
     public class SeashellTrapAI : ShootingTrapAI
     {
