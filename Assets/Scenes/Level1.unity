@@ -702,6 +702,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8930255572563592464, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
+      propertyPath: _onChange.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8930255572563592464, guid: f8b4ab3ea84bfab4094e9e74ba0e31b4, type: 3}
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 5
       objectReference: {fileID: 0}
@@ -8948,8 +8952,6 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: Sword
-        Value: 10
       - Id: Coin
         Value: 100
     Hp: 5
@@ -13437,6 +13439,18 @@ PrefabInstance:
     - target: {fileID: 7078937665297592996, guid: 6dcd13c3240263f49be65130c2605ea2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078937665297592997, guid: 6dcd13c3240263f49be65130c2605ea2, type: 3}
+      propertyPath: m_AssetsPPU
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078937665297592997, guid: 6dcd13c3240263f49be65130c2605ea2, type: 3}
+      propertyPath: m_RefResolutionX
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078937665297592997, guid: 6dcd13c3240263f49be65130c2605ea2, type: 3}
+      propertyPath: m_RefResolutionY
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dcd13c3240263f49be65130c2605ea2, type: 3}
