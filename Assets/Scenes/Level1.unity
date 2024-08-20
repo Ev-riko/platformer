@@ -13579,6 +13579,10 @@ PrefabInstance:
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1753636228}
+    - target: {fileID: 3830146274430402143, guid: f3498b6a871bfc3479beb3d825d3bc61, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: PixelCrew.Creatures.Hero.Hero, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8394550344474381928, guid: f3498b6a871bfc3479beb3d825d3bc61, type: 3}
       propertyPath: m_Name
       value: Teleport
