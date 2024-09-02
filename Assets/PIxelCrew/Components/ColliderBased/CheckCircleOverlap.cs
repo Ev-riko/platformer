@@ -38,13 +38,13 @@ namespace PixelCrew.Components.ColliderBased
             }
 
         }
-
+#if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
             Handles.color = HandlesUtils.TransparentRed;
             Handles.DrawSolidDisc(transform.position, Vector3.forward, _radius);
         }
-
+#endif
         [Serializable]
         public class OnOverlapEvent : UnityEvent<GameObject>
         {

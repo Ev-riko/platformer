@@ -1,7 +1,6 @@
 
 using PixelCrew.Components;
 using PixelCrew.Utils;
-using UnityEditor.Animations;
 using UnityEngine;
 using Cooldown = PixelCrew.Utils.Cooldown;
 using System.Collections;
@@ -22,8 +21,8 @@ namespace PixelCrew.Creatures.Hero
 
         [Space]
         [Header("Animation")]
-        [SerializeField] private AnimatorController _armed;
-        [SerializeField] private AnimatorController _desarmed;
+        [SerializeField] private RuntimeAnimatorController _armed;
+        [SerializeField] private RuntimeAnimatorController _desarmed;
 
 
         [Space]

@@ -1,4 +1,3 @@
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace PixelCrew.Creatures.Mobs
@@ -9,8 +8,8 @@ namespace PixelCrew.Creatures.Mobs
         [SerializeField] private bool _topTotemState;
         [SerializeField] private bool _invertX;
 
-        [SerializeField] private AnimatorController _top;
-        [SerializeField] private AnimatorController _bottom;
+        [SerializeField] private RuntimeAnimatorController _top;
+        [SerializeField] private RuntimeAnimatorController _bottom;
 
         private Animator _animator;
 
