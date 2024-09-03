@@ -1,5 +1,4 @@
 ﻿using PixelCrew.Model.Data.Properties;
-using System;
 using UnityEngine;
 
 namespace PixelCrew.Model.Data
@@ -7,8 +6,11 @@ namespace PixelCrew.Model.Data
     [CreateAssetMenu(menuName = "Defs/GameSettings", fileName = "GameSettings")]
     public class GameSettings : ScriptableObject
     {
-        [SerializeField] private FloatPersistentProperty Music;
-        [SerializeField] private FloatPersistentProperty Sfx;
+        [SerializeField] private FloatPersistentProperty _music;
+        [SerializeField] private FloatPersistentProperty _sfx;
+
+        public FloatPersistentProperty Music => _music;
+        public FloatPersistentProperty Sfx => _sfx;
 
         private static GameSettings _instance;
         public static GameSettings I => _instance ?? LoadGameSettings();
@@ -20,14 +22,14 @@ namespace PixelCrew.Model.Data
 
         private void OnEnable()
         {
-            Music = new FloatPersistentProperty(1, SoundSetings.Music.ToString());
-            Sfx = new FloatPersistentProperty(1, SoundSetings.Sfx.ToString());
+            _music = new FloatPersistentProperty(1, SoundSetings.Music.ToString());
+            _sfx = new FloatPersistentProperty(1, SoundSetings.Sfx.ToString());
         }
 
         private void OnValidate()
         {
-            Music.Validate();
-            Sfx.Validate();
+            _music.Validate();
+            _sfx.Validate();
         }
     }
 

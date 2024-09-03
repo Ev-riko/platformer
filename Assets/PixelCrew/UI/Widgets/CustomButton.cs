@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PixelCrew.Components.UI.Widgets
+namespace PixelCrew.UI.Widgets
 {
     public class CustomButton : Button
     {

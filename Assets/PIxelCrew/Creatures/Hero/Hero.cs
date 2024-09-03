@@ -7,6 +7,7 @@ using System.Collections;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Model;
 using PixelCrew.Components.Health;
+using PixelCrew.Model.Definitions;
 
 namespace PixelCrew.Creatures.Hero
 {
@@ -60,10 +61,11 @@ namespace PixelCrew.Creatures.Hero
         {
             _session = FindObjectOfType<GameSession>();
 
-            _health = GetComponent<HealthComponent>();
             _session.Data.inventory.OnChanged += OnInventoryChanged;
 
-            _health.SetHealth(_session.Data.Hp);
+            _health = GetComponent<HealthComponent>();
+            _health.SetMaxHealth(DefsFacade.I.Player.MaxHealth);
+            _health.SetHealth(_session.Data.Hp.Value);
             UpdateHeroWeapon();
         }
 
@@ -78,7 +80,10 @@ namespace PixelCrew.Creatures.Hero
             _session.Data.inventory.OnChanged -= OnInventoryChanged;
         }
 
-
+        public void onHealthChanged(int currentHealth)
+        {
+            _session.Data.Hp.Value = currentHealth;
+        } 
 
 
         protected override void Update()

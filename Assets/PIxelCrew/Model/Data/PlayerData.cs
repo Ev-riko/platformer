@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixelCrew.Model.Data.Properties;
+using System;
 using UnityEngine;
 
 namespace PixelCrew.Model.Data
@@ -9,7 +10,8 @@ namespace PixelCrew.Model.Data
         [SerializeField] private InventoryData _inventory;
         public InventoryData inventory => _inventory;
 
-        public int Hp;
+        public IntProperty Hp = new IntProperty();
+        //public 
 
         public PlayerData Clone()
         {

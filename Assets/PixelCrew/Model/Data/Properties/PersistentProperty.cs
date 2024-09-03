@@ -1,12 +1,12 @@
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace PixelCrew.Model.Data.Properties
 {
+    [Serializable]
     public abstract class PersistentProperty<TPropertyType>
     {
-        [SerializeField] private TPropertyType _value;
+        [SerializeField] protected TPropertyType _value;
         private TPropertyType _stored;
 
         private TPropertyType _defaultValue;
@@ -28,9 +28,9 @@ namespace PixelCrew.Model.Data.Properties
                 var isEquals = _stored.Equals(value);
                 if (isEquals) return;
 
-                var oldValue = _value;
+                var oldValue = _stored;
                 Write(value);
-                _stored =_value = value;
+                _stored = _value = value;
 
                 OnChanged?.Invoke(value, oldValue);
             }
