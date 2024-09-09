@@ -1,4 +1,3 @@
-using PixelCrew.Model.Definitions;
 using System;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,10 +11,11 @@ namespace PixelCrew.Components.Health
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] public UnityEvent _onDie;
         [SerializeField] private UnityEvent _onHeal;
-        [SerializeField] private HealthChangeEvent _onChange;
 
-        
-         
+        public delegate void OnHealthChanged(int currentHealth, int maxHealth);
+        public OnHealthChanged OnChanged;
+
+
         private void Start()
         {
             _health = _maxHealth;
@@ -28,7 +28,7 @@ namespace PixelCrew.Components.Health
             
             if (healthDelta > 0) 
             {   
-                _health = System.Math.Min(_maxHealth, _health + healthDelta);
+                _health = Mathf.Min(_maxHealth, _health + healthDelta);
                 
                 Debug.Log($"HealValue: {healthDelta}, _health: {_health}");
                 Debug.Log($"_onHeal");
@@ -46,7 +46,7 @@ namespace PixelCrew.Components.Health
                 
             }
 
-            _onChange?.Invoke(_health);
+            OnChanged?.Invoke(_health, _maxHealth);
 
             if (_health <= 0)
             {
@@ -60,7 +60,7 @@ namespace PixelCrew.Components.Health
         [ContextMenu("Update Health")]
         public void UpdateHealth()
         {
-            _onChange?.Invoke(_health);
+            OnChanged?.Invoke(_health, _maxHealth);
         }
 #endif
 

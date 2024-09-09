@@ -8,6 +8,7 @@ using PixelCrew.Components.ColliderBased;
 using PixelCrew.Model;
 using PixelCrew.Components.Health;
 using PixelCrew.Model.Definitions;
+using Unity.VisualScripting;
 
 namespace PixelCrew.Creatures.Hero
 {
@@ -66,6 +67,8 @@ namespace PixelCrew.Creatures.Hero
             _health = GetComponent<HealthComponent>();
             _health.SetMaxHealth(DefsFacade.I.Player.MaxHealth);
             _health.SetHealth(_session.Data.Hp.Value);
+            _health.OnChanged += OnHealthChanged;
+
             UpdateHeroWeapon();
         }
 
@@ -78,9 +81,10 @@ namespace PixelCrew.Creatures.Hero
         private void OnDestroy()
         {
             _session.Data.inventory.OnChanged -= OnInventoryChanged;
+            _health.OnChanged -= OnHealthChanged;
         }
 
-        public void onHealthChanged(int currentHealth)
+        public void OnHealthChanged(int currentHealth, int maxHealth)
         {
             _session.Data.Hp.Value = currentHealth;
         } 
@@ -198,6 +202,7 @@ namespace PixelCrew.Creatures.Hero
             if (SwordCount <= 0) return;
 
             base.Attack();
+            Sounds.PlayClip("Melee");
         }
 
         public void ArmHero()

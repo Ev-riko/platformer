@@ -52,7 +52,7 @@ MonoBehaviour:
   - {fileID: 5334186186907379819}
   - {fileID: 5334186187643683544}
   _cooldown:
-    _value: 0.5
+    _value: 1
 --- !u!1001 &936032271714211606
 PrefabInstance:
   m_ObjectHideFlags: 0
