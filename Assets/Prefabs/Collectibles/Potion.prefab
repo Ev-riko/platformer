@@ -14,10 +14,8 @@ GameObject:
   - component: {fileID: 3814069891834900091}
   - component: {fileID: 1143083052}
   - component: {fileID: 1143083053}
-  - component: {fileID: 8314305142224991397}
-  - component: {fileID: 598650471174706254}
   m_Layer: 10
-  m_Name: PotionHealth
+  m_Name: Potion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 471607717
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1798267741, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
+  m_Sprite: {fileID: 25473310, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,14 +103,7 @@ MonoBehaviour:
   _frameRate: 10
   _clips:
   - _name: Idle
-    _sprites:
-    - {fileID: -1798267741, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
-    - {fileID: 336710574, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
-    - {fileID: 397209828, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
-    - {fileID: -621622296, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
-    - {fileID: -789408531, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
-    - {fileID: 277046440, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
-    - {fileID: 1771585429, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
+    _sprites: []
     _loop: 1
     _allowNextClip: 0
     _onComplete:
@@ -134,7 +125,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02, y: -0.09}
+  m_Offset: {x: 0.019999996, y: 0.01}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -145,7 +136,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28, y: 0.45}
+  m_Size: {x: 0.21714783, y: 0.41000003}
   m_EdgeRadius: 0
 --- !u!114 &1143083052
 MonoBehaviour:
@@ -191,32 +182,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 598650471174706254}
-        m_TargetAssemblyTypeName: PixelCrew.Components.PotionComponent, Assembly-CSharp
-        m_MethodName: StartPotionAnimation
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Potion
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 8314305142224991397}
-        m_TargetAssemblyTypeName: PixelCrew.Components.ModifyHealthComponent, Assembly-CSharp
-        m_MethodName: ModifyHealth
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1143083052}
-        m_TargetAssemblyTypeName: PixelCrew.Components.DestroyOdjectComponent, Assembly-CSharp
+        m_TargetAssemblyTypeName: PixelCrew.Components.GoBased.DestroyOdjectComponent,
+          Assembly-CSharp
         m_MethodName: DestroyOdject
         m_Mode: 1
         m_Arguments:
@@ -227,28 +195,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &8314305142224991397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3820198953154453635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b2d04bff196b644192534c1411779f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _power: 5
---- !u!114 &598650471174706254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3820198953154453635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 280531a62313b874da942b55bf2c8790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
