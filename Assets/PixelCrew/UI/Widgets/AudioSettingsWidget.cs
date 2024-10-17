@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Model.Data.Properties;
+using PixelCrew.Utils.Disposebles;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,15 +12,18 @@ namespace PIxelCrew.UI.Widgets
 
         private FloatPersistentProperty _model;
 
+        private readonly CompositeDisposeble _trash = new CompositeDisposeble();
+
         private void Start()
         {
+            _trash.Retain(_slider.onValueChanged.Subscribe(OnSliderValueChanged));
             _slider.onValueChanged.AddListener(OnSliderValueChanged);
         }
 
         public void SetModel(FloatPersistentProperty model)
         {
             _model = model;
-            _model.OnChanged += OnValueChanged;
+            _trash.Retain(_model.Subscribe(OnValueChanged));
             OnValueChanged(model.Value, model.Value);
         }
 
@@ -37,8 +41,7 @@ namespace PIxelCrew.UI.Widgets
 
         private void OnDestroy()
         {
-            _slider.onValueChanged.RemoveListener(OnSliderValueChanged);
-            _model.OnChanged -= OnValueChanged;
+            _trash.Dispose();
         }
     }
 }

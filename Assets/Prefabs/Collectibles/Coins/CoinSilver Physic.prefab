@@ -143,6 +143,18 @@ MonoBehaviour:
           m_StringArgument: Destroy
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3910656538448384094}
+        m_TargetAssemblyTypeName: PlaySfxSound, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 3678595529030200977}
         m_TargetAssemblyTypeName: PixelCrew.Components.DestroyOdjectComponent, Assembly-CSharp
         m_MethodName: DestroyOdject
@@ -179,6 +191,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a887cffff050ad409fbcd365c16c88c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3910656538448384094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2345762841607730912, guid: 0bb7643cd87af274ea3000803a04fd24, type: 3}
+  m_PrefabInstance: {fileID: 1641741863076538046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3678595529030200975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8cbc9d868b98149b7f08cd19de6766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &4368973671765478044 stripped

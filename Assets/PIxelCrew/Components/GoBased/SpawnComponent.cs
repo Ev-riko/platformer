@@ -1,3 +1,5 @@
+using PixelCrew.Utils;
+using System;
 using UnityEngine;
 
 namespace PixelCrew.Components.GoBased
@@ -15,7 +17,7 @@ namespace PixelCrew.Components.GoBased
             GameObject instance;
             if (_space == Space.World)
             {
-                instance = Instantiate(_prefab, _target.position, Quaternion.identity);
+                instance = SpawnUtils.Spawn(_prefab, _target.position);
                 instance.transform.localScale = _target.lossyScale;
             }
             else
@@ -23,6 +25,11 @@ namespace PixelCrew.Components.GoBased
                 instance = Instantiate(_prefab, _target.position, Quaternion.identity, _target);
             }
             instance.SetActive(true);
+        }
+
+        internal void SetPrefab(GameObject prefab)
+        {
+            _prefab = prefab;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using PixelCrew.Model.Definitions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace PixelCrew.Model.Data
@@ -21,7 +22,7 @@ namespace PixelCrew.Model.Data
             if (itemDef.IsVoid) return;
 
 
-            if (itemDef.IsStackable)
+            if (itemDef.HasTag(ItemTag.Stackble))
             {
                 AddTostack(id, value);
             }
@@ -58,14 +59,25 @@ namespace PixelCrew.Model.Data
             }
         }
 
-
+        public InventoryItemData[] GetAll(params ItemTag[] tags)
+        {
+            var retValue = new List<InventoryItemData>();
+            foreach (var item in _inventory)
+            {
+                var itemDef = DefsFacade.I.Items.Get(item.Id);
+                var isAllRequirementsMet = tags.All(x => itemDef.HasTag(x));
+                if (isAllRequirementsMet)
+                    retValue.Add(item);
+            }
+            return _inventory.ToArray();
+        }
 
         public void Remove(string id, int value)
         {
             var itemDef = DefsFacade.I.Items.Get(id);
             if (itemDef.IsVoid) return;
 
-            if (itemDef.IsStackable)
+            if (itemDef.HasTag(ItemTag.Stackble))
             {
                 RemoveFromStack(id, value);
             }
@@ -86,7 +98,7 @@ namespace PixelCrew.Model.Data
 
             if (item.Value <= 0)
                 _inventory.Remove(item);
-     
+
         }
         private void RemoveNonStack(string id, int value)
         {

@@ -10,6 +10,9 @@ namespace PixelCrew.Model
         [SerializeField] private PlayerData _data;
         private PlayerData _save;
         public PlayerData Data => _data;
+        public QuickInventoryModel QuickInventory { get; private set; }
+
+        
 
         private void Awake()
         {
@@ -22,9 +25,15 @@ namespace PixelCrew.Model
             else
             {
                 Save();
+                InitModels();
                 DontDestroyOnLoad(gameObject);
             }
             
+        }
+
+        private void InitModels()
+        {
+            QuickInventory = new QuickInventoryModel(Data);
         }
 
         private void LoadHud()

@@ -10,14 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8e6b30a1b7645247a0bd5b65b9e6e41, type: 3}
-  m_Name: inventoryitems
+  m_Name: inventoryItems
   m_EditorClassIdentifier: 
   _items:
   - _id: Coin
-    _isStackable: 1
+    _icon: {fileID: 968813077, guid: 4b0ce02742649fa4c898e53194a05846, type: 3}
+    _tags: 0000000001000000
   - _id: Sword
-    _isStackable: 1
+    _icon: {fileID: 21300000, guid: c2d102bd67656074ebfaaa9b869e8280, type: 3}
+    _tags: 000000000200000001000000
   - _id: Key
-    _isStackable: 0
+    _icon: {fileID: 21300000, guid: 7d1bb4ace5f4b4440a73f6da313aee38, type: 3}
+    _tags: 
   - _id: PotionHealth
-    _isStackable: 0
+    _icon: {fileID: -1798267741, guid: e9c5585ef5247f6489ba0eab0d1ed04f, type: 3}
+    _tags: 010000000300000004000000
+  - _id: PotionHealthSmall
+    _icon: {fileID: 359758143, guid: b9a09bb49484fc54d97cb06ee9652fc5, type: 3}
+    _tags: 010000000300000004000000
+  - _id: PerlProjectile
+    _icon: {fileID: 21300000, guid: 7e16bf8b7bf26a5498c5b8fb4fa045d4, type: 3}
+    _tags: 000000000100000002000000

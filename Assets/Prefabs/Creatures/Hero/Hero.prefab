@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 4926214152286423768}
   - component: {fileID: 4423276187767836189}
   m_Layer: 3
-  m_Name: ProjectilePosition
+  m_Name: ThrowSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -790,6 +790,7 @@ MonoBehaviour:
   _wallCheck: {fileID: 509610119}
   _throwCooldown:
     _value: 2
+  _throwSpawner: {fileID: 4423276187767836189}
   _hitDrop: {fileID: 2013364702}
   _armed: {fileID: 9100000, guid: f2edede420ddfd3488459d93f8df9bd6, type: 2}
   _desarmed: {fileID: 9100000, guid: 1253af38cdd93c54ab474f02743cf068, type: 2}
@@ -918,6 +919,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9821743c-1529-4e2a-9766-3308ba0845f9
     m_ActionName: Hero/Heai[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 78d3161b-379d-447d-bea7-cdef91882eaf
+    m_ActionName: Hero/NextItem[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -1051,21 +1056,6 @@ MonoBehaviour:
   _onHeal:
     m_PersistentCalls:
       m_Calls: []
-  _onChange:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6057377996538258832}
-        m_TargetAssemblyTypeName: PixelCrew.Creatures.Hero.Hero, Assembly-CSharp
-        m_MethodName: onHealthChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4870158628302876601
 MonoBehaviour:
   m_ObjectHideFlags: 0
