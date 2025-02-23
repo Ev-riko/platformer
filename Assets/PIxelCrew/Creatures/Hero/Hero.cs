@@ -11,6 +11,7 @@ using PixelCrew.Model.Definitions;
 using Unity.VisualScripting;
 using System;
 using PixelCrew.Components.GoBased;
+using PixelCrew.Utils.Disposebles;
 
 namespace PixelCrew.Creatures.Hero
 {
@@ -46,6 +47,8 @@ namespace PixelCrew.Creatures.Hero
         private static readonly int ThrowKey = Animator.StringToHash("throw");
         private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
 
+        private readonly CompositeDisposeble _trash = new CompositeDisposeble();
+
         private GameSession _session;
         private HealthComponent _health;
 
@@ -53,7 +56,6 @@ namespace PixelCrew.Creatures.Hero
         private int CoinsCount => _session.Data.inventory.Count("Coin");
         private int SwordCount => _session.Data.inventory.Count(SwordId);
         private int PotionHealthCount => _session.Data.inventory.Count("PotionHealth");
-
         private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
 
         private bool CanThrow
@@ -83,7 +85,7 @@ namespace PixelCrew.Creatures.Hero
             _health = GetComponent<HealthComponent>();
             _health.SetMaxHealth(DefsFacade.I.Player.MaxHealth);
             _health.SetHealth(_session.Data.Hp.Value);
-            _health.OnChanged += OnHealthChanged;
+            _trash.Retain(_health._onChanged.Subscribe(OnHealthChanged));
 
             UpdateHeroWeapon();
         }
@@ -97,10 +99,10 @@ namespace PixelCrew.Creatures.Hero
         private void OnDestroy()
         {
             _session.Data.inventory.OnChanged -= OnInventoryChanged;
-            _health.OnChanged -= OnHealthChanged;
+            _trash.Dispose();
         }
 
-        public void OnHealthChanged(int currentHealth, int maxHealth)
+        public void OnHealthChanged(int currentHealth)
         {
             _session.Data.Hp.Value = currentHealth;
         }

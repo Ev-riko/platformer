@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Model;
+using PixelCrew.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,12 +17,12 @@ namespace PixelCrew.UI.InGameMenu
             Time.timeScale = 0f;
         }
 
-        private void OnShowSettings()
+        public void OnShowSettings()
         {
-
+            WindowUtils.CreateWindow("UI/SettingsWindow");
         }
 
-        private void OnExit()
+        public void OnExit()
         {
             SceneManager.LoadScene("MainMenu");
             var session = FindObjectOfType<GameSession>();

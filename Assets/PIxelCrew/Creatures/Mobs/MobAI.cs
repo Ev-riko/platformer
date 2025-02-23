@@ -13,7 +13,8 @@ namespace PixelCrew.Creatures.Mobs
 
         [SerializeField] private float _alarmDelay = 0.5f;
         [SerializeField] private float _attackCooldown = 1f;
-        [SerializeField] private float _MissHeroCooldown = 1f;
+        [SerializeField] private float _missHeroCooldown = 1f;
+        [SerializeField] private float _horisontalTrashhold = 0.2f;
 
         private static readonly int IsDeadKey = Animator.StringToHash("is-dead");
 
@@ -76,14 +77,18 @@ namespace PixelCrew.Creatures.Mobs
                 }
                 else
                 {
-                    SetDirectionToTarget();
+                    var _horosontalDelta = Mathf.Abs(_target.transform.position.x - transform.position.x);
+                    if (_horosontalDelta <= _horisontalTrashhold)
+                        _creature.SetDirection(Vector2.zero);
+                    else
+                        SetDirectionToTarget();
                 }
                 yield return null;
             }
 
             _creature.SetDirection(Vector2.zero);
             _particles.Spawn("MissHero");
-            yield return new WaitForSeconds(_MissHeroCooldown);
+            yield return new WaitForSeconds(_missHeroCooldown);
 
             StartState(_patrol.DoPatrol());
         }
@@ -103,7 +108,7 @@ namespace PixelCrew.Creatures.Mobs
         {
             //Debug.Log("SetDirectionToTarget");
             var direction = GetDiractionToTarget();
-
+           
             _creature.SetDirection(direction);
         }
 
