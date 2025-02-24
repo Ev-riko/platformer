@@ -1,5 +1,6 @@
 using PixelCrew.Model;
 using PixelCrew.Model.Data;
+using PixelCrew.UI.Widgets;
 using PixelCrew.Utils.Disposebles;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,8 +19,11 @@ namespace PixelCrew.UI.Hud.QuickInventory
         private GameSession _session;
         private List<InventoryItemWidget> _createdItems = new List<InventoryItemWidget>();
 
+        private DataGroup<InventoryItemData, InventoryItemWidget> _dataGroup;
+
         void Start()
         {
+            _dataGroup = new DataGroup<InventoryItemData, InventoryItemWidget>(_prefab, _container);
             _session = FindObjectOfType<GameSession>();
             _trash.Retain(_session.QuickInventory.Subscribe(Rebuild));
 
@@ -28,25 +32,8 @@ namespace PixelCrew.UI.Hud.QuickInventory
 
         private void Rebuild()
         {
-            var _inventory = _session.QuickInventory.Inventory;            
-            for (var i = _createdItems.Count; i < _inventory.Length; i++)
-            {
-                var item = Instantiate(_prefab, _container);
-                _createdItems.Add(item);
-            }
-
-            // Update data and activate
-            for (var i = 0; i < _inventory.Length; i++)
-            {
-                _createdItems[i].SetData(_inventory[i], i);
-                _createdItems[i].gameObject.SetActive(true);
-            }
-
-            // hide unused items
-            for (var i = _inventory.Length; i < _createdItems.Count; i++)
-            {
-                _createdItems[i].gameObject.SetActive(false);
-            }
+            var _inventory = _session.QuickInventory.Inventory;
+            _dataGroup.SetData(_inventory);
         }
     }
 }

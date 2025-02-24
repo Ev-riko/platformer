@@ -9365,6 +9365,58 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1787136926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787136919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099f50e5a7a374e4691691ab8f0564fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    DialogText: Use Helm?
+    Options:
+    - Text: Yes
+      OnSelect:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1787136929}
+            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+            m_MethodName: SetTrigger
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: interact
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 1787136925}
+            m_TargetAssemblyTypeName: PixelCrew.Components.TimerComponent, Assembly-CSharp
+            m_MethodName: SetTimer
+            m_Mode: 3
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Text: NO
+      OnSelect:
+        m_PersistentCalls:
+          m_Calls: []
+--- !u!95 &1787136929 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8772713980905100743, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
+  m_PrefabInstance: {fileID: 1473520109985110243}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1799494233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12717,7 +12769,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -12735,6 +12791,10 @@ PrefabInstance:
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1787136926}
     - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -12760,12 +12820,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Show
+      objectReference: {fileID: 0}
+    - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetTimer
       objectReference: {fileID: 0}
     - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: Switch
+      objectReference: {fileID: 0}
+    - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PixelCrew.Components.Dialogs.ShowOptionsComponent, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -12798,6 +12866,14 @@ PrefabInstance:
     - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 171710684428988067, guid: 4faf68281e0fa9c41beef97837e5a5dc, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
