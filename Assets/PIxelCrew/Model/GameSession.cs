@@ -29,12 +29,12 @@ namespace PixelCrew.Model
                 InitModels();
                 DontDestroyOnLoad(gameObject);
             }
-            
+
         }
 
         private void InitModels()
         {
-            QuickInventory = new QuickInventoryModel(Data);
+            QuickInventory = new QuickInventoryModel(_data);
             _trash.Retain(QuickInventory);
         }
 
@@ -61,8 +61,11 @@ namespace PixelCrew.Model
             _save = _data.Clone();
         }
 
-        public void LoadLastSave() {
+        public void LoadLastSave()
+        {
+            _trash.Dispose();
             _data = _save.Clone();
+            InitModels();
         }
 
         private void OnDestroy()
